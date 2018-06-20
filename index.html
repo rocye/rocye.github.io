@@ -181,6 +181,16 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2ec76c94e6b1b2b3ab8e80b7d88a4644";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -370,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rocye.cn/2018/06/19/SpringCloud-001/">
+    <link itemprop="mainEntityOfPage" href="http://rocye.cn/2018/06/19/SpringCloud-002/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rocye">
@@ -389,8 +399,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/19/SpringCloud-001/" itemprop="url">
-                  01、从微服务框架到SpringCloud
+                <a class="post-title-link" href="/2018/06/19/SpringCloud-002/" itemprop="url">
+                  02、Eureka - 服务的注册与发现
                 </a>
               
             
@@ -416,12 +426,24 @@
                 
               
 
-              <time title="创建时间：2018-06-19 10:25:39 / 修改时间：15:13:19" itemprop="dateCreated datePublished" datetime="2018-06-19T10:25:39+08:00">2018-06-19</time>
+              <time title="创建时间：2018-06-19 16:58:55" itemprop="dateCreated datePublished" datetime="2018-06-19T16:58:55+08:00">2018-06-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-20 11:47:22" itemprop="dateModified" datetime="2018-06-20T11:47:22+08:00">2018-06-20</time>
               
             
           </span>
@@ -473,8 +495,191 @@
 
       
         
+          <h3 id="相关框架版本"><a href="#相关框架版本" class="headerlink" title="相关框架版本"></a>相关框架版本</h3><ul>
+<li>Spring Cloud Version：Finchley.RELEASE</li>
+<li>Sping Boot Version：2.0.3.RELEASE</li>
+</ul>
+<h3 id="创建Eureka服务器-eureka-server"><a href="#创建Eureka服务器-eureka-server" class="headerlink" title="创建Eureka服务器 (eureka server)"></a>创建Eureka服务器 (eureka server)</h3><ol>
+<li><p>创建一个Maven主工程<br>(1) Step：这里不勾选“Create from archetype”<br><img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161211.png" alt="图01">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/19/SpringCloud-002/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+	
+<div>    
+ 
+ 
+</div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://rocye.cn/2018/06/19/SpringCloud-001/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocye">
+      <meta itemprop="description" content="IT技术分享，个人知识沉淀">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi,Rocye">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/19/SpringCloud-001/" itemprop="url">
+                  01、从微服务框架到SpringCloud
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-19 10:25:39" itemprop="dateCreated datePublished" datetime="2018-06-19T10:25:39+08:00">2018-06-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-20 09:25:10" itemprop="dateModified" datetime="2018-06-20T09:25:10+08:00">2018-06-20</time>
+              
+            
+          </span>
+
           
-            <h3 id="什么是微服务框架"><a href="#什么是微服务框架" class="headerlink" title="什么是微服务框架"></a>什么是微服务框架</h3><p>对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。</p>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SpringCloud笔记/" itemprop="url" rel="index"><span itemprop="name">SpringCloud笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="什么是微服务框架"><a href="#什么是微服务框架" class="headerlink" title="什么是微服务框架"></a>什么是微服务框架</h3><p>对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。</p>
 <h3 id="Netflix的微服务框架"><a href="#Netflix的微服务框架" class="headerlink" title="Netflix的微服务框架"></a>Netflix的微服务框架</h3><p>Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix把几乎整个微服务框架栈开源贡献给了社区，这些框架和组件包括：</p>
 <ul>
 <li>Eureka：服务注册发现框架</li>
@@ -486,93 +691,14 @@
 <li>Servo：Metrics组件</li>
 <li>Blitz4j：日志组件</li>
 </ul>
-<p>下图展示了基于这些组件构建的一个微服务框架体系：<br><img src="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png" alt="来自recipes-rss"></p>
-<p>Netflix的开源框架组件已经在Netflix的大规模分布式微服务环境中经过多年的生产实战验证，正逐步被社区接受为构造微服务框架的标准组件。Pivotal去年推出的Spring Cloud开源产品，主要是基于对Netflix开源组件的进一步封装，方便Spring开发人员构建微服务基础框架。</p>
-<h3 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h3><p>Spring Cloud正是对Netflix的多个开源组件进一步的封装而成，同时又实现了和云端平台及Spring Boot开发框架很好的集成。Spring Cloud 为开发者提供了在分布式系统（配置管理，服务发现，熔断，路由，微代理，控制总线，一次性token，全局锁，leader选举，分布式session，集群状态等等）中快速构建的工具，使用Spring Cloud的开发者可以快速的启动服务或构建应用、同时能够快速和云平台资源进行对接。</p>
-<p>Spring Cloud Netflix，该项目是Spring Cloud的子项目之一，主要内容是对Netflix公司一系列开源产品的包装，它为Spring Boot应用提供了自配置的Netflix OSS整合。<strong>通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路有（Zuul），客户端负载均衡（Ribbon）等。</strong></p>
-<p>当然Spring Cloud还有额外扩展的其它很多组件，包括了服务链路监控和跟踪（很关键的一个功能），消息总线，数据流处理，批量任务处理等。而对于整个Spring Cloud微服务框架简单来说，即是：<br><strong>你只要划分到你的微服务组件和模块，并定义好需要暴露的API接口，那么剩下的整个开发和传统方式没有太大的区别，你开发完成的组件集成起来就是一个分布式可扩展的微服务环境。里面设计到的接口发布，服务注册，服务调用和路由，服务监控，健康检测和流控等都会由微服务框架来帮你完成。</strong></p>
-<p><strong><em>PS：正是有了成熟的微服务框架，我们才更应该将微服务架构设计重心从技术底层转移到组件划分和接口设计上。</em></strong></p>
-<h3 id="Spring-Cloud-VS-Dubbo"><a href="#Spring-Cloud-VS-Dubbo" class="headerlink" title="Spring Cloud VS Dubbo"></a>Spring Cloud VS Dubbo</h3><h5 id="R1：背景"><a href="#R1：背景" class="headerlink" title="R1：背景"></a>R1：背景</h5><p>Dubbo：是阿里巴巴服务化治理的核心框架，并被广泛应用于阿里巴巴集团的各成员站点。</p>
-<p>Spring Cloud：是Spring Source的产物，Spring社区的强大背书可以说是Java企业界最有影响力的组织了，除了Spring Source之外，还有Pivotal和Netfix是其强大的后盾与技术输出。其中Netflix开源的整套微服务架构套件是Spring Cloud的核心。</p>
-<h5 id="R2：社区活跃度"><a href="#R2：社区活跃度" class="headerlink" title="R2：社区活跃度"></a>R2：社区活跃度</h5><p>我们选择一个开源框架，社区的活跃度是我们极为关注的一个要点。社区越活跃，解决问题的速度越快，框架也会越来越完善，不然当我们碰到问题，就不得不自己解决。而对于团队来说，也就意味着我们不得不自己去维护框架的源码，这对于团队来说也将会是一个很大的负担。</p>
-<ul>
-<li>Dubbo ：<a href="https://github.com/dubbo" target="_blank" rel="noopener">https://github.com/dubbo</a></li>
-</ul>
-<p><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180619134600.png" alt="来自github"></p>
-<ul>
-<li>Spring Cloud ：<a href="https://github.com/spring-cloud" target="_blank" rel="noopener">https://github.com/spring-cloud</a></li>
-</ul>
-<p><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180619134630.png" alt="来自github"><br><strong>小结：</strong>在社区活跃度上，Spring Cloud毋庸置疑的优于Dubbo，这对于没有大量精力与财力维护这部分开源内容的团队来说，Spring Cloud会是更优的选择。</p>
-<h5 id="R3：架构完整度"><a href="#R3：架构完整度" class="headerlink" title="R3：架构完整度"></a>R3：架构完整度</h5><p>根据微服务架构在各方面的要素，看看Spring Cloud和Dubbo都提供了哪些支持：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Dubbo</th>
-<th>Spring Cloud</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>服务注册中心</td>
-<td>Zookeeper</td>
-<td>Spring Cloud Netflix Eureka</td>
-</tr>
-<tr>
-<td>服务调用方式</td>
-<td>RPC</td>
-<td>REST API</td>
-</tr>
-<tr>
-<td>服务网关</td>
-<td>无</td>
-<td>Spring Cloud Netflix Zuul</td>
-</tr>
-<tr>
-<td>断路器</td>
-<td>不完善</td>
-<td>Spring Cloud Netflix Hystrix</td>
-</tr>
-<tr>
-<td>分布式配置</td>
-<td>无</td>
-<td>Spring Cloud Config</td>
-</tr>
-<tr>
-<td>服务跟踪</td>
-<td>无</td>
-<td>Spring Cloud Sleuth</td>
-</tr>
-<tr>
-<td>消息总线</td>
-<td>无</td>
-<td>Spring Cloud Bus</td>
-</tr>
-<tr>
-<td>数据流</td>
-<td>无</td>
-<td>Spring Cloud Stream</td>
-</tr>
-<tr>
-<td>批量任务</td>
-<td>无</td>
-<td>Spring Cloud Task</td>
-</tr>
-<tr>
-<td>……</td>
-<td>……</td>
-<td>……</td>
-</tr>
-</tbody>
-</table>
-<p>Dubbo对于上表中总结为“无”的组件不代表不能实现，而只是Dubbo框架自身不提供，需要另外整合以实现对应的功能，比如：</p>
-<p>分布式配置：可以使用淘宝的diamond、百度的disconf来实现分布式配置管理。但是Spring Cloud中的Config组件除了提供配置管理之外，由于其存储可以使用git，因此它天然的实现了配置内容的版本管理，可以完美的与应用版本管理整合起来。<br>服务跟踪：可以使用京东开源的Hydra<br>批量任务：可以使用当当开源的Elastic-Job<br>……</p>
-<h5 id="R4：对比总结"><a href="#R4：对比总结" class="headerlink" title="R4：对比总结"></a>R4：对比总结</h5><p>通过上面几个环节上的分析，打个不恰当的比喻：使用Dubbo构建的微服务架构就像组装电脑，各环节我们的选择自由度很高，但是最终结果很有可能因为一条内存质量不行就点不亮了，总是让人不怎么放心，但是如果你是一名高手，那这些都不是问题；而Spring Cloud就像品牌机，在Spring Source的整合下，做了大量的兼容性测试，保证了机器拥有更高的稳定性，但是如果要在使用非原装组件外的东西，就需要对其基础有足够的了解。</p>
-<blockquote>
-<p><strong><em>参考文章：</em></strong><br><a href="http://blog.sina.com.cn/s/blog_493a84550102wkna.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_493a84550102wkna.html</a><br><a href="http://blog.sina.com.cn/s/blog_493a84550102wkp2.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_493a84550102wkp2.html</a><br><a href="http://blog.didispace.com/microservice-framework/" target="_blank" rel="noopener">http://blog.didispace.com/microservice-framework/</a></p>
-</blockquote>
-
-          
+<p>下图展示了基于这些组件构建的一个微服务框架体系：<br><img src="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png" alt="来自recipes-rss">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/19/SpringCloud-001/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -661,7 +787,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -693,7 +819,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
