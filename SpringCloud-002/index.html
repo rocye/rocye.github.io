@@ -37,7 +37,7 @@
 
 
 
-  <meta name="google-site-verification" content="NQzSCGEvqeCHaKWtMkL_bOdJf9XwwdBZyJSU73Do8t8" />
+  <meta name="google-site-verification" content="OpXZN2WdAvHb8imBYSmMWu6jd8f_0G9JJEeyrPYd6qQ" />
 
 
 
@@ -46,7 +46,7 @@
 
 
 
-  <meta name="baidu-site-verification" content="06oQ3iZ37L" />
+  <meta name="baidu-site-verification" content="ulRpbOHQ5k" />
 
 
 
@@ -150,29 +150,51 @@
 
 
 
-  <meta name="description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
-<meta name="keywords" content="SpringCloud,微服务框架">
+  <meta name="description" content="相关框架版本 Spring Cloud Version：Finchley.RELEASE Sping Boot Version：2.0.3.RELEASE  创建Eureka服务器 (eureka server)1. 创建一个Maven主工程 (1) Step：这里不勾选“Create from archetype”">
+<meta name="keywords" content="SpringCloud,Eureka">
 <meta property="og:type" content="article">
-<meta property="og:title" content="01、从微服务框架到SpringCloud">
-<meta property="og:url" content="https://rocye.github.io/2018/06/19/SpringCloud-001/index.html">
+<meta property="og:title" content="02、Eureka - 服务的注册与发现">
+<meta property="og:url" content="http://blog.rocye.cn/SpringCloud-002/index.html">
 <meta property="og:site_name" content="Hi,Rocye">
-<meta property="og:description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
+<meta property="og:description" content="相关框架版本 Spring Cloud Version：Finchley.RELEASE Sping Boot Version：2.0.3.RELEASE  创建Eureka服务器 (eureka server)1. 创建一个Maven主工程 (1) Step：这里不勾选“Create from archetype”">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png">
-<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180619134600.png">
-<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180619134630.png">
-<meta property="og:updated_time" content="2018-06-20T05:46:44.129Z">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161211.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161535.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161606.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161834.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162402.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162518.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162952.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619163105.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619163142.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619163855.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619164135.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619164724.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619164910.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619165034.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620094359.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162518.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620094818.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620094947.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620095101.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620095806.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620100421.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620112114.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620102801.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P1_20180620112038.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180620112202.png">
+<meta property="og:updated_time" content="2018-06-20T05:46:20.780Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="01、从微服务框架到SpringCloud">
-<meta name="twitter:description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
-<meta name="twitter:image" content="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png">
+<meta name="twitter:title" content="02、Eureka - 服务的注册与发现">
+<meta name="twitter:description" content="相关框架版本 Spring Cloud Version：Finchley.RELEASE Sping Boot Version：2.0.3.RELEASE  创建Eureka服务器 (eureka server)1. 创建一个Maven主工程 (1) Step：这里不勾选“Create from archetype”">
+<meta name="twitter:image" content="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161211.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://rocye.github.io/2018/06/19/SpringCloud-001/"/>
+  <link rel="canonical" href="http://blog.rocye.cn/SpringCloud-002/"/>
 
 
 
@@ -182,7 +204,7 @@
   };
 </script>
 
-  <title>01、从微服务框架到SpringCloud | Hi,Rocye</title>
+  <title>02、Eureka - 服务的注册与发现 | Hi,Rocye</title>
   
 
 
@@ -388,7 +410,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://rocye.github.io/2018/06/19/SpringCloud-001/">
+    <link itemprop="mainEntityOfPage" href="http://blog.rocye.cn/SpringCloud-002/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rocye">
@@ -405,7 +427,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">01、从微服务框架到SpringCloud
+          <h1 class="post-title" itemprop="name headline">02、Eureka - 服务的注册与发现
               
             
           </h1>
@@ -430,7 +452,7 @@
                 
               
 
-              <time title="创建时间：2018-06-19 10:25:39" itemprop="dateCreated datePublished" datetime="2018-06-19T10:25:39+08:00">2018-06-19</time>
+              <time title="创建时间：2018-06-19 16:58:55" itemprop="dateCreated datePublished" datetime="2018-06-19T16:58:55+08:00">2018-06-19</time>
             
 
             
@@ -447,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-20 13:46:44" itemprop="dateModified" datetime="2018-06-20T13:46:44+08:00">2018-06-20</time>
+                <time title="修改时间：2018-06-20 13:46:20" itemprop="dateModified" datetime="2018-06-20T13:46:20+08:00">2018-06-20</time>
               
             
           </span>
@@ -498,111 +520,38 @@
       
 
       
-        <h3 id="什么是微服务框架"><a href="#什么是微服务框架" class="headerlink" title="什么是微服务框架"></a>什么是微服务框架</h3><p>对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。</p>
-<h3 id="Netflix的微服务框架"><a href="#Netflix的微服务框架" class="headerlink" title="Netflix的微服务框架"></a>Netflix的微服务框架</h3><p>Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix把几乎整个微服务框架栈开源贡献给了社区，这些框架和组件包括：</p>
-<ul>
-<li>Eureka：服务注册发现框架</li>
-<li>Zuul：服务网关</li>
-<li>Karyon：服务端框架</li>
-<li>Ribbon：客户端框架</li>
-<li>Hystrix：服务容错组件</li>
-<li>Archaius：服务配置组件</li>
-<li>Servo：Metrics组件</li>
-<li>Blitz4j：日志组件</li>
+        <h3 id="相关框架版本"><a href="#相关框架版本" class="headerlink" title="相关框架版本"></a>相关框架版本</h3><ul>
+<li>Spring Cloud Version：Finchley.RELEASE</li>
+<li>Sping Boot Version：2.0.3.RELEASE</li>
 </ul>
-<p>下图展示了基于这些组件构建的一个微服务框架体系：<br><img src="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png" alt="来自recipes-rss"><a id="more"></a></p>
-<p>Netflix的开源框架组件已经在Netflix的大规模分布式微服务环境中经过多年的生产实战验证，正逐步被社区接受为构造微服务框架的标准组件。Pivotal去年推出的Spring Cloud开源产品，主要是基于对Netflix开源组件的进一步封装，方便Spring开发人员构建微服务基础框架。</p>
-<h3 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h3><p>Spring Cloud正是对Netflix的多个开源组件进一步的封装而成，同时又实现了和云端平台及Spring Boot开发框架很好的集成。Spring Cloud 为开发者提供了在分布式系统（配置管理，服务发现，熔断，路由，微代理，控制总线，一次性token，全局锁，leader选举，分布式session，集群状态等等）中快速构建的工具，使用Spring Cloud的开发者可以快速的启动服务或构建应用、同时能够快速和云平台资源进行对接。</p>
-<p>Spring Cloud Netflix，该项目是Spring Cloud的子项目之一，主要内容是对Netflix公司一系列开源产品的包装，它为Spring Boot应用提供了自配置的Netflix OSS整合。<strong>通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路有（Zuul），客户端负载均衡（Ribbon）等。</strong></p>
-<p>当然Spring Cloud还有额外扩展的其它很多组件，包括了服务链路监控和跟踪（很关键的一个功能），消息总线，数据流处理，批量任务处理等。而对于整个Spring Cloud微服务框架简单来说，即是：<br><strong>你只要划分到你的微服务组件和模块，并定义好需要暴露的API接口，那么剩下的整个开发和传统方式没有太大的区别，你开发完成的组件集成起来就是一个分布式可扩展的微服务环境。里面设计到的接口发布，服务注册，服务调用和路由，服务监控，健康检测和流控等都会由微服务框架来帮你完成。</strong></p>
-<p><strong><em>PS：正是有了成熟的微服务框架，我们才更应该将微服务架构设计重心从技术底层转移到组件划分和接口设计上。</em></strong></p>
-<h3 id="Spring-Cloud-VS-Dubbo"><a href="#Spring-Cloud-VS-Dubbo" class="headerlink" title="Spring Cloud VS Dubbo"></a>Spring Cloud VS Dubbo</h3><h4 id="R1：背景"><a href="#R1：背景" class="headerlink" title="R1：背景"></a>R1：背景</h4><p>Dubbo：是阿里巴巴服务化治理的核心框架，并被广泛应用于阿里巴巴集团的各成员站点。</p>
-<p>Spring Cloud：是Spring Source的产物，Spring社区的强大背书可以说是Java企业界最有影响力的组织了，除了Spring Source之外，还有Pivotal和Netfix是其强大的后盾与技术输出。其中Netflix开源的整套微服务架构套件是Spring Cloud的核心。</p>
-<h4 id="R2：社区活跃度"><a href="#R2：社区活跃度" class="headerlink" title="R2：社区活跃度"></a>R2：社区活跃度</h4><p>我们选择一个开源框架，社区的活跃度是我们极为关注的一个要点。社区越活跃，解决问题的速度越快，框架也会越来越完善，不然当我们碰到问题，就不得不自己解决。而对于团队来说，也就意味着我们不得不自己去维护框架的源码，这对于团队来说也将会是一个很大的负担。</p>
-<ul>
-<li>Dubbo ：<a href="https://github.com/dubbo" target="_blank" rel="noopener">https://github.com/dubbo</a></li>
-</ul>
-<p><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180619134600.png" alt="来自github"></p>
-<ul>
-<li>Spring Cloud ：<a href="https://github.com/spring-cloud" target="_blank" rel="noopener">https://github.com/spring-cloud</a></li>
-</ul>
-<p><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180619134630.png" alt="来自github"><br><strong>小结：</strong>在社区活跃度上，Spring Cloud毋庸置疑的优于Dubbo，这对于没有大量精力与财力维护这部分开源内容的团队来说，Spring Cloud会是更优的选择。</p>
-<h4 id="R3：架构完整度"><a href="#R3：架构完整度" class="headerlink" title="R3：架构完整度"></a>R3：架构完整度</h4><p>根据微服务架构在各方面的要素，看看Spring Cloud和Dubbo都提供了哪些支持：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Dubbo</th>
-<th>Spring Cloud</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>服务注册中心</td>
-<td>Zookeeper</td>
-<td>Spring Cloud Netflix Eureka</td>
-</tr>
-<tr>
-<td>服务调用方式</td>
-<td>RPC</td>
-<td>REST API</td>
-</tr>
-<tr>
-<td>服务网关</td>
-<td>无</td>
-<td>Spring Cloud Netflix Zuul</td>
-</tr>
-<tr>
-<td>断路器</td>
-<td>不完善</td>
-<td>Spring Cloud Netflix Hystrix</td>
-</tr>
-<tr>
-<td>分布式配置</td>
-<td>无</td>
-<td>Spring Cloud Config</td>
-</tr>
-<tr>
-<td>服务跟踪</td>
-<td>无</td>
-<td>Spring Cloud Sleuth</td>
-</tr>
-<tr>
-<td>消息总线</td>
-<td>无</td>
-<td>Spring Cloud Bus</td>
-</tr>
-<tr>
-<td>数据流</td>
-<td>无</td>
-<td>Spring Cloud Stream</td>
-</tr>
-<tr>
-<td>批量任务</td>
-<td>无</td>
-<td>Spring Cloud Task</td>
-</tr>
-<tr>
-<td>……</td>
-<td>……</td>
-<td>……</td>
-</tr>
-</tbody>
-</table>
-<p>Dubbo对于上表中总结为“无”的组件不代表不能实现，而只是Dubbo框架自身不提供，需要另外整合以实现对应的功能，比如：</p>
-<p>分布式配置：可以使用淘宝的diamond、百度的disconf来实现分布式配置管理。但是Spring Cloud中的Config组件除了提供配置管理之外，由于其存储可以使用git，因此它天然的实现了配置内容的版本管理，可以完美的与应用版本管理整合起来。<br>服务跟踪：可以使用京东开源的Hydra<br>批量任务：可以使用当当开源的Elastic-Job<br>……</p>
-<h4 id="R4：对比总结"><a href="#R4：对比总结" class="headerlink" title="R4：对比总结"></a>R4：对比总结</h4><p>通过上面几个环节上的分析，打个不恰当的比喻：使用Dubbo构建的微服务架构就像组装电脑，各环节我们的选择自由度很高，但是最终结果很有可能因为一条内存质量不行就点不亮了，总是让人不怎么放心，但是如果你是一名高手，那这些都不是问题；而Spring Cloud就像品牌机，在Spring Source的整合下，做了大量的兼容性测试，保证了机器拥有更高的稳定性，但是如果要在使用非原装组件外的东西，就需要对其基础有足够的了解。</p>
+<h3 id="创建Eureka服务器-eureka-server"><a href="#创建Eureka服务器-eureka-server" class="headerlink" title="创建Eureka服务器 (eureka server)"></a>创建Eureka服务器 (eureka server)</h3><h4 id="1-创建一个Maven主工程"><a href="#1-创建一个Maven主工程" class="headerlink" title="1. 创建一个Maven主工程"></a>1. 创建一个Maven主工程</h4><p> (1) Step：这里不勾选“Create from archetype”<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161211.png" alt="图01">    <a id="more"></a>(2) Step：自定义GroupId和ArtifactId<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161535.png" alt="图02">    (3) Step：自定义工程名及路径<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161606.png" alt="图03">    (4) Step：创建完成后如下图，因为是空的父工程所以可以将src文件夹删除<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161834.png" alt="图04"></p>
+<h4 id="2-在父工程的基础上创建一个Module子工程用作Eureka服务器"><a href="#2-在父工程的基础上创建一个Module子工程用作Eureka服务器" class="headerlink" title="2. 在父工程的基础上创建一个Module子工程用作Eureka服务器"></a>2. 在父工程的基础上创建一个Module子工程用作Eureka服务器</h4><p> (1) Step：在父工程上右键选择 New-&gt;Module<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162402.png" alt="图05">    (2) Step：选择Spring Initializr<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162518.png" alt="图06">    (3) Step：自定义项目Metadata<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162952.png" alt="图07">    (4) Step：这里只需要选择Eureka服务端依赖<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619163105.png" alt="图08">    (5) Setp：自定义模块名及路径<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619163142.png" alt="图09">    (6) Setp：创建完成后的pom文件如下图<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619163855.png" alt="图10"></p>
+<h4 id="3-修改工程配置文件类型为YML并加入配置"><a href="#3-修改工程配置文件类型为YML并加入配置" class="headerlink" title="3. 修改工程配置文件类型为YML并加入配置"></a>3. 修改工程配置文件类型为YML并加入配置</h4><p> (1) Step：修改application.properties为application.yml（注：本工程配置文件将全部采用YML格式）<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619164135.png" alt="图11">    (2) Step：在配置文件中加入如下配置，其中将registerWithEureka和fetchRegistry设置为false标识此为服务端<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619164724.png" alt="图12"></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: <span class="number">8761</span></span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  instance:</span><br><span class="line">    hostname: localhost</span><br><span class="line">  client:</span><br><span class="line">    register-<span class="keyword">with</span>-eureka: <span class="literal">false</span></span><br><span class="line">    fetch-registry: <span class="literal">false</span></span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http:<span class="comment">//$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-在启动类上加入注解-EnableEurekaServer"><a href="#4-在启动类上加入注解-EnableEurekaServer" class="headerlink" title="4. 在启动类上加入注解@EnableEurekaServer"></a>4. 在启动类上加入注解@EnableEurekaServer</h4><p> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619164910.png" alt="图13"></p>
+<ol start="5">
+<li>启动itest-server工程，在浏览器中打开：<a href="http://localhost:8761" target="_blank" rel="noopener">http://localhost:8761</a> 看到下图所示页面表示Eureka服务端已创建成功<br><img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619165034.png" alt="图14"></li>
+</ol>
+<h3 id="创建Eureka客户端-eureka-client"><a href="#创建Eureka客户端-eureka-client" class="headerlink" title="创建Eureka客户端 (eureka client)"></a>创建Eureka客户端 (eureka client)</h3><h4 id="1-在父工程的基础上创建一个Module子工程用作Eureka客户端"><a href="#1-在父工程的基础上创建一个Module子工程用作Eureka客户端" class="headerlink" title="1. 在父工程的基础上创建一个Module子工程用作Eureka客户端"></a>1. 在父工程的基础上创建一个Module子工程用作Eureka客户端</h4><p> (1) Step：在父工程上右键选择 New-&gt;Module<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620094359.png" alt="图15">    (2) Step：选择Spring Initializr<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619162518.png" alt="图16">    (3) Step：自定义项目Metadata<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620094818.png" alt="图17">    (4) Step：这里选择Eureka Discovery和Web依赖<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620094947.png" alt="图18">    (5) Setp：自定义模块名及路径<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620095101.png" alt="图19">    (6) Setp：创建完成后的pom文件如下图<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620095806.png" alt="图20"></p>
+<h4 id="2-修改工程配置文件类型为YML并加入配置"><a href="#2-修改工程配置文件类型为YML并加入配置" class="headerlink" title="2. 修改工程配置文件类型为YML并加入配置"></a>2. 修改工程配置文件类型为YML并加入配置</h4><p> 修改application.properties为application.yml并在配置文件中加入如下配置，其中service-url(或serviceUrl)配置成服务端地址<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620100421.png" alt="图21"></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: <span class="number">8762</span></span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: itest-client</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">      service-url:</span><br><span class="line">        defaultZone: http:<span class="comment">//localhost:8761/eureka/</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-在启动类上加入注解-EnableEurekaClient"><a href="#3-在启动类上加入注解-EnableEurekaClient" class="headerlink" title="3. 在启动类上加入注解@EnableEurekaClient"></a>3. 在启动类上加入注解@EnableEurekaClient</h4><p> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620112114.png" alt="图22"></p>
+<h4 id="4-依次启动itest-server和itest-client工程，打开：http-localhost-8761-看到下图所示页面表示Eureka客户端已创建成功"><a href="#4-依次启动itest-server和itest-client工程，打开：http-localhost-8761-看到下图所示页面表示Eureka客户端已创建成功" class="headerlink" title="4. 依次启动itest-server和itest-client工程，打开：http://localhost:8761 看到下图所示页面表示Eureka客户端已创建成功"></a>4. 依次启动itest-server和itest-client工程，打开：<a href="http://localhost:8761" target="_blank" rel="noopener">http://localhost:8761</a> 看到下图所示页面表示Eureka客户端已创建成功</h4><p> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620102801.png" alt="图23"></p>
+<h4 id="5-创建测试的RestController-上面加入的Web依赖在这里用到"><a href="#5-创建测试的RestController-上面加入的Web依赖在这里用到" class="headerlink" title="5. 创建测试的RestController(上面加入的Web依赖在这里用到)"></a>5. 创建测试的RestController(上面加入的Web依赖在这里用到)</h4><p> <img src="http://pajxnp8qc.bkt.clouddn.com//P1_20180620112038.png" alt="图24"></p>
+<h4 id="6-重启itest-client工程，在浏览器中打开：http-localhost-8762-test-name-rocye-看到下图所示页面"><a href="#6-重启itest-client工程，在浏览器中打开：http-localhost-8762-test-name-rocye-看到下图所示页面" class="headerlink" title="6. 重启itest-client工程，在浏览器中打开：http://localhost:8762/test?name=rocye 看到下图所示页面"></a>6. 重启itest-client工程，在浏览器中打开：<a href="http://localhost:8762/test?name=rocye" target="_blank" rel="noopener">http://localhost:8762/test?name=rocye</a> 看到下图所示页面</h4><p> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180620112202.png" alt="图25"></p>
+<p>源码下载：<a href="https://github.com/rocye/SpringCloudStudy" target="_blank" rel="noopener">https://github.com/rocye/SpringCloudStudy</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>基于IntelliJ IDEA开发工具构建Spring Cloud工程非常简单和方便，合理利用配置步骤中的选择来生成配置文件能减少不必要的错误。</p>
 <p><em>PS：本人博客新人，不喜勿喷，谢谢!!</em></p>
 <blockquote>
-<p><strong><em>参考文章：</em></strong><br><a href="http://blog.sina.com.cn/s/blog_493a84550102wkna.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_493a84550102wkna.html</a><br><a href="http://blog.sina.com.cn/s/blog_493a84550102wkp2.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_493a84550102wkp2.html</a><br><a href="http://blog.didispace.com/microservice-framework/" target="_blank" rel="noopener">http://blog.didispace.com/microservice-framework/</a></p>
+<p><strong><em>参考文章：</em></strong><br><a href="https://springcloud.cc/spring-cloud-dalston.html#spring-cloud-eureka-server" target="_blank" rel="noopener">https://springcloud.cc/spring-cloud-dalston.html#spring-cloud-eureka-server</a><br><a href="https://springcloud.cc/spring-cloud-dalston.html#_service_discovery_eureka_clients" target="_blank" rel="noopener">https://springcloud.cc/spring-cloud-dalston.html#_service_discovery_eureka_clients</a><br><a href="https://blog.csdn.net/forezp/article/details/69696915" target="_blank" rel="noopener">https://blog.csdn.net/forezp/article/details/69696915</a></p>
 </blockquote>
 
       
     </div>
 
     
-	
-<div>    
+
+<div>
  
  
     <ul class="post-copyright">
@@ -611,7 +560,7 @@
       </li>
       <li class="post-copyright-link">
         <strong>本文链接：</strong>
-        <a href="/2018/06/19/SpringCloud-001/" title="01、从微服务框架到SpringCloud">01、从微服务框架到SpringCloud</a>
+        <a href="/SpringCloud-002/" title="02、Eureka - 服务的注册与发现">02、Eureka - 服务的注册与发现</a>
       </li>
       <li class="post-copyright-license">
         <strong>版权声明： </strong>
@@ -637,7 +586,7 @@
           
             <a href="/tags/SpringCloud/" rel="tag"># SpringCloud</a>
           
-            <a href="/tags/微服务框架/" rel="tag"># 微服务框架</a>
+            <a href="/tags/Eureka/" rel="tag"># Eureka</a>
           
         </div>
       
@@ -650,15 +599,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/SpringCloud-001/" rel="next" title="01、从微服务框架到SpringCloud">
+                <i class="fa fa-chevron-left"></i> 01、从微服务框架到SpringCloud
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/19/SpringCloud-002/" rel="prev" title="02、Eureka - 服务的注册与发现">
-                02、Eureka - 服务的注册与发现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -806,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是微服务框架"><span class="nav-number">1.</span> <span class="nav-text">什么是微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netflix的微服务框架"><span class="nav-number">2.</span> <span class="nav-text">Netflix的微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud"><span class="nav-number">3.</span> <span class="nav-text">Spring Cloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud-VS-Dubbo"><span class="nav-number">4.</span> <span class="nav-text">Spring Cloud VS Dubbo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R1：背景"><span class="nav-number">4.1.</span> <span class="nav-text">R1：背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R2：社区活跃度"><span class="nav-number">4.2.</span> <span class="nav-text">R2：社区活跃度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R3：架构完整度"><span class="nav-number">4.3.</span> <span class="nav-text">R3：架构完整度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R4：对比总结"><span class="nav-number">4.4.</span> <span class="nav-text">R4：对比总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关框架版本"><span class="nav-number">1.</span> <span class="nav-text">相关框架版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Eureka服务器-eureka-server"><span class="nav-number">2.</span> <span class="nav-text">创建Eureka服务器 (eureka server)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建一个Maven主工程"><span class="nav-number">2.1.</span> <span class="nav-text">1. 创建一个Maven主工程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在父工程的基础上创建一个Module子工程用作Eureka服务器"><span class="nav-number">2.2.</span> <span class="nav-text">2. 在父工程的基础上创建一个Module子工程用作Eureka服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-修改工程配置文件类型为YML并加入配置"><span class="nav-number">2.3.</span> <span class="nav-text">3. 修改工程配置文件类型为YML并加入配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在启动类上加入注解-EnableEurekaServer"><span class="nav-number">2.4.</span> <span class="nav-text">4. 在启动类上加入注解@EnableEurekaServer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Eureka客户端-eureka-client"><span class="nav-number">3.</span> <span class="nav-text">创建Eureka客户端 (eureka client)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在父工程的基础上创建一个Module子工程用作Eureka客户端"><span class="nav-number">3.1.</span> <span class="nav-text">1. 在父工程的基础上创建一个Module子工程用作Eureka客户端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-修改工程配置文件类型为YML并加入配置"><span class="nav-number">3.2.</span> <span class="nav-text">2. 修改工程配置文件类型为YML并加入配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-在启动类上加入注解-EnableEurekaClient"><span class="nav-number">3.3.</span> <span class="nav-text">3. 在启动类上加入注解@EnableEurekaClient</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-依次启动itest-server和itest-client工程，打开：http-localhost-8761-看到下图所示页面表示Eureka客户端已创建成功"><span class="nav-number">3.4.</span> <span class="nav-text">4. 依次启动itest-server和itest-client工程，打开：http://localhost:8761 看到下图所示页面表示Eureka客户端已创建成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-创建测试的RestController-上面加入的Web依赖在这里用到"><span class="nav-number">3.5.</span> <span class="nav-text">5. 创建测试的RestController(上面加入的Web依赖在这里用到)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-重启itest-client工程，在浏览器中打开：http-localhost-8762-test-name-rocye-看到下图所示页面"><span class="nav-number">3.6.</span> <span class="nav-text">6. 重启itest-client工程，在浏览器中打开：http://localhost:8762/test?name=rocye 看到下图所示页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

@@ -10,5 +10,5 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-Sitemap: http://rocye.github.io/sitemap.xml
-Sitemap: http://rocye.github.io/baidusitemap.xml
+Sitemap: http://blog.rocye.cn/sitemap.xml
+Sitemap: http://blog.rocye.cn/baidusitemap.xml
