@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/SpringCloud-004/</loc>
+    <lastmod>2018-06-21T10:11:13.864Z</lastmod>
+    <data>
+        <display>
+        <title>04、Feign - 声明式REST客户端</title>
+        <pubTime>2018-06-21T08:41:18.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>Feign</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-003/</loc>
-    <lastmod>2018-06-21T07:41:19.395Z</lastmod>
+    <lastmod>2018-06-21T08:38:48.832Z</lastmod>
     <data>
         <display>
         <title>03、Ribbon - 客户端负载均衡器</title>
@@ -26,16 +48,16 @@
 
     
   <url>
-    <loc>http://blog.rocye.cn/SpringCloud-002/</loc>
-    <lastmod>2018-06-21T06:17:38.659Z</lastmod>
+    <loc>http://blog.rocye.cn/SpringCloud-001/</loc>
+    <lastmod>2018-06-21T08:10:07.087Z</lastmod>
     <data>
         <display>
-        <title>02、Eureka - 服务的注册与发现</title>
-        <pubTime>2018-06-19T08:58:55.000Z</pubTime>
+        <title>01、从微服务框架到SpringCloud</title>
+        <pubTime>2018-06-19T02:25:39.000Z</pubTime>
         
         <tag>SpringCloud</tag>
          
-        <tag>Eureka</tag>
+        <tag>微服务框架</tag>
          
          
            
@@ -48,16 +70,16 @@
 
     
   <url>
-    <loc>http://blog.rocye.cn/SpringCloud-001/</loc>
-    <lastmod>2018-06-20T05:46:44.129Z</lastmod>
+    <loc>http://blog.rocye.cn/SpringCloud-002/</loc>
+    <lastmod>2018-06-21T08:09:46.329Z</lastmod>
     <data>
         <display>
-        <title>01、从微服务框架到SpringCloud</title>
-        <pubTime>2018-06-19T02:25:39.000Z</pubTime>
+        <title>02、Eureka - 服务的注册与发现</title>
+        <pubTime>2018-06-19T08:58:55.000Z</pubTime>
         
         <tag>SpringCloud</tag>
          
-        <tag>微服务框架</tag>
+        <tag>Eureka</tag>
          
          
            
