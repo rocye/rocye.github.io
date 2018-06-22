@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/SpringCloud-005/</loc>
+    <lastmod>2018-06-22T09:54:11.188Z</lastmod>
+    <data>
+        <display>
+        <title>05、Hystrix - 断路器之在Ribbon中的使用</title>
+        <pubTime>2018-06-22T07:48:45.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>Hystrix</tag>
+         
+        <tag>Ribbon</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-004/</loc>
-    <lastmod>2018-06-21T10:11:13.864Z</lastmod>
+    <lastmod>2018-06-22T07:54:17.416Z</lastmod>
     <data>
         <display>
         <title>04、Feign - 声明式REST客户端</title>

@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.rocye.cn/SpringCloud-005/</loc>
+    
+    <lastmod>2018-06-22T09:54:11.188Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-004/</loc>
     
-    <lastmod>2018-06-21T10:11:13.864Z</lastmod>
+    <lastmod>2018-06-22T07:54:17.416Z</lastmod>
     
   </url>
   
