@@ -462,6 +462,9 @@
           
 
   
+   <div id="gitalk-container"></div>
+
+  
 
 
 
@@ -738,6 +741,23 @@
 
 
 
+
+
+
+  <link rel="stylesheet" href="/css/gitalk.css">
+  <script src="/js/src/gitalk.min.js"></script>
+  <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '24d625e4ea38f7e4c002',
+		  clientSecret: 'f9d911e6d654ce10e0594e2da2bce085ec651b54',
+		  repo: 'BlogComments',
+		  owner: 'rocye',
+		  admin: ['rocye'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')
+  </script>
 
 
 
