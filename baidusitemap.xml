@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/SpringCloud-006/</loc>
+    <lastmod>2018-06-26T05:28:39.238Z</lastmod>
+    <data>
+        <display>
+        <title>06、Hystrix - 断路器之在Feign中的使用</title>
+        <pubTime>2018-06-22T21:59:07.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>Hystrix</tag>
+         
+        <tag>Feign</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-005/</loc>
     <lastmod>2018-06-22T09:54:11.188Z</lastmod>
     <data>
