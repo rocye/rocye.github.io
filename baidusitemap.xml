@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/SpringCloud-007/</loc>
+    <lastmod>2018-06-29T07:30:37.579Z</lastmod>
+    <data>
+        <display>
+        <title>07、Turbine - 断路器集群监控</title>
+        <pubTime>2018-06-28T08:13:42.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>Turbine</tag>
+         
+        <tag>Hystrix</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-005/</loc>
     <lastmod>2018-06-26T07:54:59.285Z</lastmod>
     <data>
