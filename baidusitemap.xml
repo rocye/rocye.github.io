@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/SpringCloud-008/</loc>
+    <lastmod>2018-07-04T06:39:02.881Z</lastmod>
+    <data>
+        <display>
+        <title>08、Zuul - 路由网关</title>
+        <pubTime>2018-07-03T07:56:39.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>Zuul</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.rocye.cn/SpringCloud-001/</loc>
+    <lastmod>2018-07-03T08:15:26.719Z</lastmod>
+    <data>
+        <display>
+        <title>01、从微服务框架到SpringCloud</title>
+        <pubTime>2018-06-19T02:25:39.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>微服务框架</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-007/</loc>
     <lastmod>2018-06-29T07:47:20.508Z</lastmod>
     <data>
@@ -13,9 +57,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Hystrix</tag>
-         
         <tag>Turbine</tag>
+         
+        <tag>Hystrix</tag>
          
          
            
@@ -108,28 +152,6 @@
         <tag>SpringCloud</tag>
          
         <tag>Ribbon</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.rocye.cn/SpringCloud-001/</loc>
-    <lastmod>2018-06-21T08:10:07.087Z</lastmod>
-    <data>
-        <display>
-        <title>01、从微服务框架到SpringCloud</title>
-        <pubTime>2018-06-19T02:25:39.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-        <tag>微服务框架</tag>
          
          
            

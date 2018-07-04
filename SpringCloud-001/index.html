@@ -159,9 +159,10 @@
 <meta property="og:description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png">
+<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180702142024.png">
 <meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180619134600.png">
 <meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180619134630.png">
-<meta property="og:updated_time" content="2018-06-21T08:10:07.087Z">
+<meta property="og:updated_time" content="2018-07-03T08:15:26.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01、从微服务框架到SpringCloud">
 <meta name="twitter:description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
@@ -447,7 +448,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-21 16:10:07" itemprop="dateModified" datetime="2018-06-21T16:10:07+08:00">2018-06-21</time>
+                <time title="修改时间：2018-07-03 16:15:26" itemprop="dateModified" datetime="2018-07-03T16:15:26+08:00">2018-07-03</time>
               
             
           </span>
@@ -520,6 +521,7 @@
 </ul>
 <p>下图展示了基于这些组件构建的一个微服务框架体系：<br><img src="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png" alt="来自recipes-rss"><a id="more"></a></p>
 <p>Netflix的开源框架组件已经在Netflix的大规模分布式微服务环境中经过多年的生产实战验证，正逐步被社区接受为构造微服务框架的标准组件。Pivotal去年推出的Spring Cloud开源产品，主要是基于对Netflix开源组件的进一步封装，方便Spring开发人员构建微服务基础框架。</p>
+<h3 id="微服务化要点关联图"><a href="#微服务化要点关联图" class="headerlink" title="微服务化要点关联图"></a>微服务化要点关联图</h3><p>了解了Netflix的微服务框架核心组件之后，我们很有必要总览一下这些组件之间的关系，这样更有利于对整个微服务框架的理解，接下来借用网易云的一张架构图，就能很清晰的了解这些组件之间的关系了：<br><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180702142024.png" alt="www.163yun.com"></p>
 <h3 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h3><p>Spring Cloud正是对Netflix的多个开源组件进一步的封装而成，同时又实现了和云端平台及Spring Boot开发框架很好的集成。Spring Cloud 为开发者提供了在分布式系统（配置管理，服务发现，熔断，路由，微代理，控制总线，一次性token，全局锁，leader选举，分布式session，集群状态等等）中快速构建的工具，使用Spring Cloud的开发者可以快速的启动服务或构建应用、同时能够快速和云平台资源进行对接。</p>
 <p>Spring Cloud Netflix，该项目是Spring Cloud的子项目之一，主要内容是对Netflix公司一系列开源产品的包装，它为Spring Boot应用提供了自配置的Netflix OSS整合。<strong>通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路有（Zuul），客户端负载均衡（Ribbon）等。</strong></p>
 <p>当然Spring Cloud还有额外扩展的其它很多组件，包括了服务链路监控和跟踪（很关键的一个功能），消息总线，数据流处理，批量任务处理等。而对于整个Spring Cloud微服务框架简单来说，即是：<br><strong>你只要划分到你的微服务组件和模块，并定义好需要暴露的API接口，那么剩下的整个开发和传统方式没有太大的区别，你开发完成的组件集成起来就是一个分布式可扩展的微服务环境。里面设计到的接口发布，服务注册，服务调用和路由，服务监控，健康检测和流控等都会由微服务框架来帮你完成。</strong></p>
@@ -746,7 +748,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -788,7 +790,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -824,7 +828,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是微服务框架"><span class="nav-number">1.</span> <span class="nav-text">什么是微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netflix的微服务框架"><span class="nav-number">2.</span> <span class="nav-text">Netflix的微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud"><span class="nav-number">3.</span> <span class="nav-text">Spring Cloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud-VS-Dubbo"><span class="nav-number">4.</span> <span class="nav-text">Spring Cloud VS Dubbo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R1：背景"><span class="nav-number">4.1.</span> <span class="nav-text">R1：背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R2：社区活跃度"><span class="nav-number">4.2.</span> <span class="nav-text">R2：社区活跃度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R3：架构完整度"><span class="nav-number">4.3.</span> <span class="nav-text">R3：架构完整度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R4：对比总结"><span class="nav-number">4.4.</span> <span class="nav-text">R4：对比总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是微服务框架"><span class="nav-number">1.</span> <span class="nav-text">什么是微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netflix的微服务框架"><span class="nav-number">2.</span> <span class="nav-text">Netflix的微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微服务化要点关联图"><span class="nav-number">3.</span> <span class="nav-text">微服务化要点关联图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud"><span class="nav-number">4.</span> <span class="nav-text">Spring Cloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud-VS-Dubbo"><span class="nav-number">5.</span> <span class="nav-text">Spring Cloud VS Dubbo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R1：背景"><span class="nav-number">5.1.</span> <span class="nav-text">R1：背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R2：社区活跃度"><span class="nav-number">5.2.</span> <span class="nav-text">R2：社区活跃度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R3：架构完整度"><span class="nav-number">5.3.</span> <span class="nav-text">R3：架构完整度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R4：对比总结"><span class="nav-number">5.4.</span> <span class="nav-text">R4：对比总结</span></a></li></ol></li></ol></div>
             
 
           </div>
