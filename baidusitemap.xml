@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/JAVA8-001/</loc>
+    <lastmod>2018-07-05T07:58:43.911Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA8新特性简介</title>
+        <pubTime>2018-07-05T03:57:20.000Z</pubTime>
+        
+        <tag>JAVA8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JAVA8笔记" url="http://blog.rocye.cn/categories/JAVA8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-008/</loc>
     <lastmod>2018-07-04T06:39:02.881Z</lastmod>
     <data>
@@ -57,9 +77,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Turbine</tag>
-         
         <tag>Hystrix</tag>
+         
+        <tag>Turbine</tag>
          
          
            
@@ -81,9 +101,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Ribbon</tag>
-         
         <tag>Hystrix</tag>
+         
+        <tag>Ribbon</tag>
          
          
            
