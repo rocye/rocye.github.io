@@ -4,11 +4,33 @@
 
     
   <url>
-    <loc>http://blog.rocye.cn/JAVA8-001/</loc>
-    <lastmod>2018-07-05T07:58:43.911Z</lastmod>
+    <loc>http://blog.rocye.cn/SpringCloud-009/</loc>
+    <lastmod>2018-07-10T05:31:50.824Z</lastmod>
     <data>
         <display>
-        <title>JAVA8新特性简介</title>
+        <title>09、SpringCloudConfig - 分布式配置中心</title>
+        <pubTime>2018-07-09T07:05:32.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>SpringCloudConfig</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.rocye.cn/JAVA8-001/</loc>
+    <lastmod>2018-07-09T08:02:05.422Z</lastmod>
+    <data>
+        <display>
+        <title>01、JAVA8新特性简介</title>
         <pubTime>2018-07-05T03:57:20.000Z</pubTime>
         
         <tag>JAVA8</tag>
@@ -25,7 +47,7 @@
     
   <url>
     <loc>http://blog.rocye.cn/SpringCloud-008/</loc>
-    <lastmod>2018-07-04T06:39:02.881Z</lastmod>
+    <lastmod>2018-07-09T07:37:49.908Z</lastmod>
     <data>
         <display>
         <title>08、Zuul - 路由网关</title>
@@ -101,9 +123,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Hystrix</tag>
-         
         <tag>Ribbon</tag>
+         
+        <tag>Hystrix</tag>
          
          
            
