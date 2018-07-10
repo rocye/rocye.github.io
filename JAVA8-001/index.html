@@ -151,7 +151,7 @@
 
 
   <meta name="description" content="速度更快我们应该知道JAVA8中最为核心是Lambda表达式和Stream API，除此之外JAVA8还在底层数据结构及内存结构等方面做了优化，目的都是为了让它速度更快。 ● 底层数据结构进行了优化- HashMap（HashSet同理）1) 在JAVA7中 HashMap = 数组 + 链表 ：不管我们将hashCode与equals方法写的多好，都有可能发生碰撞，碰撞是指hashCode相同但">
-<meta name="keywords" content="JAVA8">
+<meta name="keywords" content="Java8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01、JAVA8新特性简介">
 <meta property="og:url" content="http://blog.rocye.cn/JAVA8-001/index.html">
@@ -160,7 +160,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//J01_20180705152922.png">
 <meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//J01_20180705152923.png">
-<meta property="og:updated_time" content="2018-07-09T08:02:05.422Z">
+<meta property="og:updated_time" content="2018-07-10T07:18:44.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01、JAVA8新特性简介">
 <meta name="twitter:description" content="速度更快我们应该知道JAVA8中最为核心是Lambda表达式和Stream API，除此之外JAVA8还在底层数据结构及内存结构等方面做了优化，目的都是为了让它速度更快。 ● 底层数据结构进行了优化- HashMap（HashSet同理）1) 在JAVA7中 HashMap = 数组 + 链表 ：不管我们将hashCode与equals方法写的多好，都有可能发生碰撞，碰撞是指hashCode相同但">
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-09 16:02:05" itemprop="dateModified" datetime="2018-07-09T16:02:05+08:00">2018-07-09</time>
+                <time title="修改时间：2018-07-10 15:18:44" itemprop="dateModified" datetime="2018-07-10T15:18:44+08:00">2018-07-10</time>
               
             
           </span>
@@ -514,8 +514,9 @@
 <h5 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="- ConcurrentHashMap"></a>- ConcurrentHashMap</h5><p>1) 在JAVA7中采用分段锁机制(默认16个段) ：<br>JAVA7中通过并行级别参数（ConcurrentLevel=16）进行分段锁机制，提高并行效率。</p>
 <p>2) 在JAVA8中不再采用锁机制而是改成CAS算法</p>
 <blockquote>
-<p><em>相关文章：</em><br><em><a href="http://www.importnew.com/22007.html" target="_blank" rel="noopener">Java8—ConcurrentHashMap分析</a></em><br><em><a href="https://segmentfault.com/p/1210000010020931/read" target="_blank" rel="noopener">ConcurrentHashMap演进从Java7到Java8</a></em><br><a id="more"></a></p>
+<p><em>相关文章：</em><br><em><a href="http://www.importnew.com/22007.html" target="_blank" rel="noopener">Java8—ConcurrentHashMap分析</a></em><br><em><a href="https://segmentfault.com/p/1210000010020931/read" target="_blank" rel="noopener">ConcurrentHashMap演进从Java7到Java8</a></em></p>
 </blockquote>
+<a id="more"></a>
 <h4 id="●-内存结构及垃圾回收机制进行了优化"><a href="#●-内存结构及垃圾回收机制进行了优化" class="headerlink" title="● 内存结构及垃圾回收机制进行了优化"></a>● 内存结构及垃圾回收机制进行了优化</h4><h5 id="JAVA7内存结构"><a href="#JAVA7内存结构" class="headerlink" title="- JAVA7内存结构"></a>- JAVA7内存结构</h5><p>调优配置参数：PremGenSize 和 MaxPremGenSize<br><img src="http://pajxnp8qc.bkt.clouddn.com//J01_20180705152922.png" alt="图01"></p>
 <h5 id="JAVA8内存结构"><a href="#JAVA8内存结构" class="headerlink" title="- JAVA8内存结构"></a>- JAVA8内存结构</h5><p>调优配置参数：MetaSpaceSize 和 MaxMetaSpaceSize<br><img src="http://pajxnp8qc.bkt.clouddn.com//J01_20180705152923.png" alt="图02"></p>
 <font color="red">PS：使用了物理内存后垃圾回收机制效率都将得到提升，且OOM异常发生的概率也极低，因为项目的类结构文件占不了太大的空间。</font>
@@ -573,7 +574,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JAVA8/" rel="tag"># JAVA8</a>
+            <a href="/tags/Java8/" rel="tag"># Java8</a>
           
         </div>
       
@@ -679,7 +680,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -729,7 +730,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

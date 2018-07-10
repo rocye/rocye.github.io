@@ -4,8 +4,50 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/JAVA8-002/</loc>
+    <lastmod>2018-07-10T07:20:07.698Z</lastmod>
+    <data>
+        <display>
+        <title>02、为什么使用Lambda表达式</title>
+        <pubTime>2018-07-10T06:14:12.000Z</pubTime>
+        
+        <tag>Java8</tag>
+         
+        <tag>Lambda</tag>
+         
+         
+           
+             
+              <breadCrumb title="JAVA8笔记" url="http://blog.rocye.cn/categories/JAVA8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.rocye.cn/JAVA8-001/</loc>
+    <lastmod>2018-07-10T07:18:44.037Z</lastmod>
+    <data>
+        <display>
+        <title>01、JAVA8新特性简介</title>
+        <pubTime>2018-07-05T03:57:20.000Z</pubTime>
+        
+        <tag>Java8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JAVA8笔记" url="http://blog.rocye.cn/categories/JAVA8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/SpringCloud-009/</loc>
-    <lastmod>2018-07-10T05:31:50.824Z</lastmod>
+    <lastmod>2018-07-10T07:17:36.571Z</lastmod>
     <data>
         <display>
         <title>09、SpringCloudConfig - 分布式配置中心</title>
@@ -19,26 +61,6 @@
            
              
               <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.rocye.cn/JAVA8-001/</loc>
-    <lastmod>2018-07-09T08:02:05.422Z</lastmod>
-    <data>
-        <display>
-        <title>01、JAVA8新特性简介</title>
-        <pubTime>2018-07-05T03:57:20.000Z</pubTime>
-        
-        <tag>JAVA8</tag>
-         
-         
-           
-             
-              <breadCrumb title="JAVA8笔记" url="http://blog.rocye.cn/categories/JAVA8%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -147,9 +169,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Hystrix</tag>
-         
         <tag>Feign</tag>
+         
+        <tag>Hystrix</tag>
          
          
            
