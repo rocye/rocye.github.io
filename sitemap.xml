@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.rocye.cn/SpringCloud-010/</loc>
+    
+    <lastmod>2018-07-13T06:59:57.617Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.rocye.cn/SpringCloud-006/</loc>
+    
+    <lastmod>2018-07-11T07:23:48.778Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.rocye.cn/JAVA8-002/</loc>
     
     <lastmod>2018-07-10T07:20:07.698Z</lastmod>
@@ -47,13 +61,6 @@
     <loc>http://blog.rocye.cn/SpringCloud-005/</loc>
     
     <lastmod>2018-06-26T07:54:59.285Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.rocye.cn/SpringCloud-006/</loc>
-    
-    <lastmod>2018-06-26T05:28:39.238Z</lastmod>
     
   </url>
   

@@ -384,6 +384,196 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.rocye.cn/SpringCloud-010/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocye">
+      <meta itemprop="description" content="IT技术分享，个人知识沉淀">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Rocye">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/SpringCloud-010/" itemprop="url">
+                  10、Bus - 消息总线
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-11 15:15:54" itemprop="dateCreated datePublished" datetime="2018-07-11T15:15:54+08:00">2018-07-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 14:59:57" itemprop="dateModified" datetime="2018-07-13T14:59:57+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SpringCloud笔记/" itemprop="url" rel="index"><span itemprop="name">SpringCloud笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="相关框架版本"><a href="#相关框架版本" class="headerlink" title="相关框架版本"></a>相关框架版本</h3><ul>
+<li>Spring Cloud Version：Finchley.RELEASE</li>
+<li>Eureka Version：2.0.0.RELEASE</li>
+<li>Spring Cloud Config Version：2.0.0.RELEASE</li>
+<li>Spring Cloud Bus Version：2.0.0.RELEASE</li>
+<li>Sping Boot Version：2.0.3.RELEASE</li>
+</ul>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>在上一篇的文章中已经介绍了<a href="http://blog.rocye.cn/SpringCloud-009/">分布式配置中心</a>的使用，并且在文章末尾提到了如果我们想要实现服务配置修改后自动刷新所有的集群客户端需要用到Spring Cloud Bus这一组件。</p>
+<p>Spring Cloud Bus 将分布式系统的节点通过轻量级消息代理连接起来。用于在集群中传播状态更改（例如配置更改事件）或其他管理指令。Spring Cloud Bus 的一个核心思想是通过分布式的启动器对 Spring Boot 应用进行扩展，也可以用来建立一个或多个应用之间的通信频道。目前唯一实现的方式是用 AMQP 消息代理作为通道。</p>
+<h3 id="消息总线"><a href="#消息总线" class="headerlink" title="消息总线"></a>消息总线</h3><p>消息总线是一种通信工具，可以在机器之间互相传输消息、文件等。消息总线扮演着一种消息路由的角色，拥有一套完备的路由机制来决定消息传输方向。发送段只需要向消息总线发出消息而不用管消息被如何转发。 Spring cloud bus 通过轻量消息代理连接各个分布的节点。管理和传播所有分布式项目中的消息，本质是利用了MQ的广播机制在分布式的系统中传播消息，目前常用的有Kafka和RabbitMQ。</p>
+<h3 id="消息代理"><a href="#消息代理" class="headerlink" title="消息代理"></a>消息代理</h3><p>消息代理（Message Broker）是一种消息验证、传输、路由的架构模式。消息代理是一个中间件产品，它的核心是一个消息的路由程序，用来实现接收和分发消息，并根据设定好的消息处理流来转发给正确的应用。它包括独立的通信和消息传递协议，能够实现组织内部和组织间的网络通信。设计代理的目的就是为了能够从应用程序中传入消息，并执行一些特别的操作。<br>现有的消息代理开源产品：ActiveMQ、Kafka、RabbitMQ、RocketMQ。<br>目前Spring Cloud Bus 支持 RabbitMQ（spring-cloud-starter-bus-amqp） 和 Kafka（spring-cloud-starter-bus-kafka），本文将以RabbitMQ为例。</p>
+<h3 id="修改config-servert工程加入Bus组件"><a href="#修改config-servert工程加入Bus组件" class="headerlink" title="修改config-servert工程加入Bus组件"></a>修改<a href="http://blog.rocye.cn/SpringCloud-009/">config-servert</a>工程加入Bus组件</h3><h4 id="1-修改pom文件加入bus组件依赖"><a href="#1-修改pom文件加入bus组件依赖" class="headerlink" title="1. 修改pom文件加入bus组件依赖"></a>1. 修改pom文件加入bus组件依赖</h4><p> <img src="http://pajxnp8qc.bkt.clouddn.com//P09_20180711163351.png" alt="图01">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/SpringCloud-010/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+<div>
+ 
+ 
+</div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.rocye.cn/JAVA8-002/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1379,7 +1569,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-26 13:28:39" itemprop="dateModified" datetime="2018-06-26T13:28:39+08:00">2018-06-26</time>
+                <time title="修改时间：2018-07-11 15:23:48" itemprop="dateModified" datetime="2018-07-11T15:23:48+08:00">2018-07-11</time>
               
             
           </span>
@@ -2032,189 +2222,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.rocye.cn/SpringCloud-002/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rocye">
-      <meta itemprop="description" content="IT技术分享，个人知识沉淀">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Rocye">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/SpringCloud-002/" itemprop="url">
-                  02、Eureka - 服务的注册与发现
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-19 16:58:55" itemprop="dateCreated datePublished" datetime="2018-06-19T16:58:55+08:00">2018-06-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-21 16:09:46" itemprop="dateModified" datetime="2018-06-21T16:09:46+08:00">2018-06-21</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SpringCloud笔记/" itemprop="url" rel="index"><span itemprop="name">SpringCloud笔记</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="相关框架版本"><a href="#相关框架版本" class="headerlink" title="相关框架版本"></a>相关框架版本</h3><ul>
-<li>Spring Cloud Version：Finchley.RELEASE</li>
-<li>Sping Boot Version：2.0.3.RELEASE</li>
-</ul>
-<h3 id="创建Eureka服务器-eureka-server"><a href="#创建Eureka服务器-eureka-server" class="headerlink" title="创建Eureka服务器 (eureka server)"></a>创建Eureka服务器 (eureka server)</h3><h4 id="1-创建一个Maven主工程"><a href="#1-创建一个Maven主工程" class="headerlink" title="1. 创建一个Maven主工程"></a>1. 创建一个Maven主工程</h4><p> (1) Step：这里不勾选“Create from archetype”<br> <img src="http://pajxnp8qc.bkt.clouddn.com//P01_20180619161211.png" alt="图01">
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/SpringCloud-002/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-<div>
- 
- 
-</div>
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2266,7 +2273,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2318,7 +2325,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
