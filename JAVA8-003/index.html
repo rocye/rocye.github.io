@@ -150,30 +150,25 @@
 
 
 
-  <meta name="description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
-<meta name="keywords" content="SpringCloud,微服务框架">
+  <meta name="description" content="Lambda中新增的操作符新的操作符Java8中引入了一个新的操作符 “-&amp;gt;” ，该操作符称为箭头操作符或 Lambda 操作符 操作符结构箭头操作符将Lambda表达式拆分成两部分：○ 左侧：Lambda 表达式的参数列表○ 右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体 Lambda表达式语法格式格式一：无参数，无返回值() -&amp;gt; System.out.prin">
+<meta name="keywords" content="Java8,Lambda">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【SpringCloud笔记】01、从微服务框架到SpringCloud">
-<meta property="og:url" content="http://blog.rocye.cn/SpringCloud-001/index.html">
+<meta property="og:title" content="【JAVA8笔记】03、Lambda语法和函数式接口">
+<meta property="og:url" content="http://blog.rocye.cn/JAVA8-003/index.html">
 <meta property="og:site_name" content="Hi, Rocye">
-<meta property="og:description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
+<meta property="og:description" content="Lambda中新增的操作符新的操作符Java8中引入了一个新的操作符 “-&amp;gt;” ，该操作符称为箭头操作符或 Lambda 操作符 操作符结构箭头操作符将Lambda表达式拆分成两部分：○ 左侧：Lambda 表达式的参数列表○ 右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体 Lambda表达式语法格式格式一：无参数，无返回值() -&amp;gt; System.out.prin">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png">
-<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180702142024.png">
-<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180619134600.png">
-<meta property="og:image" content="http://pajxnp8qc.bkt.clouddn.com//H_20180619134630.png">
-<meta property="og:updated_time" content="2018-07-17T08:00:04.397Z">
+<meta property="og:updated_time" content="2018-07-17T08:28:10.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【SpringCloud笔记】01、从微服务框架到SpringCloud">
-<meta name="twitter:description" content="什么是微服务框架对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。 Netflix的微服务框架Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix">
-<meta name="twitter:image" content="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png">
+<meta name="twitter:title" content="【JAVA8笔记】03、Lambda语法和函数式接口">
+<meta name="twitter:description" content="Lambda中新增的操作符新的操作符Java8中引入了一个新的操作符 “-&amp;gt;” ，该操作符称为箭头操作符或 Lambda 操作符 操作符结构箭头操作符将Lambda表达式拆分成两部分：○ 左侧：Lambda 表达式的参数列表○ 右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体 Lambda表达式语法格式格式一：无参数，无返回值() -&amp;gt; System.out.prin">
 
 
 
 
 
 
-  <link rel="canonical" href="http://blog.rocye.cn/SpringCloud-001/"/>
+  <link rel="canonical" href="http://blog.rocye.cn/JAVA8-003/"/>
 
 
 
@@ -183,7 +178,7 @@
   };
 </script>
 
-  <title>【SpringCloud笔记】01、从微服务框架到SpringCloud | Hi, Rocye</title>
+  <title>【JAVA8笔记】03、Lambda语法和函数式接口 | Hi, Rocye</title>
   
 
 
@@ -389,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.rocye.cn/SpringCloud-001/">
+    <link itemprop="mainEntityOfPage" href="http://blog.rocye.cn/JAVA8-003/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rocye">
@@ -406,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【SpringCloud笔记】01、从微服务框架到SpringCloud
+          <h1 class="post-title" itemprop="name headline">【JAVA8笔记】03、Lambda语法和函数式接口
               
             
           </h1>
@@ -431,24 +426,12 @@
                 
               
 
-              <time title="创建时间：2018-06-19 10:25:39" itemprop="dateCreated datePublished" datetime="2018-06-19T10:25:39+08:00">2018-06-19</time>
+              <time title="创建时间：2018-07-17 15:12:45 / 修改时间：16:28:10" itemprop="dateCreated datePublished" datetime="2018-07-17T15:12:45+08:00">2018-07-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-17 16:00:04" itemprop="dateModified" datetime="2018-07-17T16:00:04+08:00">2018-07-17</time>
               
             
           </span>
@@ -465,7 +448,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SpringCloud笔记/" itemprop="url" rel="index"><span itemprop="name">SpringCloud笔记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA8笔记/" itemprop="url" rel="index"><span itemprop="name">JAVA8笔记</span></a></span>
 
                 
                 
@@ -507,104 +490,37 @@
       
 
       
-        <h3 id="什么是微服务框架"><a href="#什么是微服务框架" class="headerlink" title="什么是微服务框架"></a>什么是微服务框架</h3><p>对于微服务基础框架可以看作是微服务治理架构的核心内容，包括了对微服务模块的全生命周期管理能力，这个能力包括了微服务网关APP，DevOps，Docker和云集成，安全，负载均衡，服务注册和发现等诸多能力。微服务基础框架确实不是简单的微服务网关，而是对整个微服务基础环境的支撑和管控。</p>
-<h3 id="Netflix的微服务框架"><a href="#Netflix的微服务框架" class="headerlink" title="Netflix的微服务框架"></a>Netflix的微服务框架</h3><p>Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix把几乎整个微服务框架栈开源贡献给了社区，这些框架和组件包括：</p>
-<ul>
-<li>Eureka：服务注册发现框架</li>
-<li>Zuul：服务网关</li>
-<li>Karyon：服务端框架</li>
-<li>Ribbon：客户端框架</li>
-<li>Hystrix：服务容错组件</li>
-<li>Archaius：服务配置组件</li>
-<li>Servo：Metrics组件</li>
-<li>Blitz4j：日志组件</li>
-</ul>
-<p>下图展示了基于这些组件构建的一个微服务框架体系：<br><img src="http://pajxnp8qc.bkt.clouddn.com/H_20180619121106.png" alt="来自recipes-rss"><a id="more"></a></p>
-<p>Netflix的开源框架组件已经在Netflix的大规模分布式微服务环境中经过多年的生产实战验证，正逐步被社区接受为构造微服务框架的标准组件。Pivotal去年推出的Spring Cloud开源产品，主要是基于对Netflix开源组件的进一步封装，方便Spring开发人员构建微服务基础框架。</p>
-<h3 id="微服务化要点关联图"><a href="#微服务化要点关联图" class="headerlink" title="微服务化要点关联图"></a>微服务化要点关联图</h3><p>了解了Netflix的微服务框架核心组件之后，我们很有必要总览一下这些组件之间的关系，这样更有利于对整个微服务框架的理解，接下来借用网易云的一张架构图，就能很清晰的了解这些组件之间的关系了：<br><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180702142024.png" alt="www.163yun.com"></p>
-<h3 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h3><p>Spring Cloud正是对Netflix的多个开源组件进一步的封装而成，同时又实现了和云端平台及Spring Boot开发框架很好的集成。Spring Cloud 为开发者提供了在分布式系统（配置管理，服务发现，熔断，路由，微代理，控制总线，一次性token，全局锁，leader选举，分布式session，集群状态等等）中快速构建的工具，使用Spring Cloud的开发者可以快速的启动服务或构建应用、同时能够快速和云平台资源进行对接。</p>
-<p>Spring Cloud Netflix，该项目是Spring Cloud的子项目之一，主要内容是对Netflix公司一系列开源产品的包装，它为Spring Boot应用提供了自配置的Netflix OSS整合。<strong>通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路有（Zuul），客户端负载均衡（Ribbon）等。</strong></p>
-<p>当然Spring Cloud还有额外扩展的其它很多组件，包括了服务链路监控和跟踪（很关键的一个功能），消息总线，数据流处理，批量任务处理等。而对于整个Spring Cloud微服务框架简单来说，即是：<br><strong>你只要划分到你的微服务组件和模块，并定义好需要暴露的API接口，那么剩下的整个开发和传统方式没有太大的区别，你开发完成的组件集成起来就是一个分布式可扩展的微服务环境。里面设计到的接口发布，服务注册，服务调用和路由，服务监控，健康检测和流控等都会由微服务框架来帮你完成。</strong></p>
-<p><strong><em>PS：正是有了成熟的微服务框架，我们才更应该将微服务架构设计重心从技术底层转移到组件划分和接口设计上。</em></strong></p>
-<h3 id="Spring-Cloud-VS-Dubbo"><a href="#Spring-Cloud-VS-Dubbo" class="headerlink" title="Spring Cloud VS Dubbo"></a>Spring Cloud VS Dubbo</h3><h4 id="R1：背景"><a href="#R1：背景" class="headerlink" title="R1：背景"></a>R1：背景</h4><p>Dubbo：是阿里巴巴服务化治理的核心框架，并被广泛应用于阿里巴巴集团的各成员站点。</p>
-<p>Spring Cloud：是Spring Source的产物，Spring社区的强大背书可以说是Java企业界最有影响力的组织了，除了Spring Source之外，还有Pivotal和Netfix是其强大的后盾与技术输出。其中Netflix开源的整套微服务架构套件是Spring Cloud的核心。</p>
-<h4 id="R2：社区活跃度"><a href="#R2：社区活跃度" class="headerlink" title="R2：社区活跃度"></a>R2：社区活跃度</h4><p>我们选择一个开源框架，社区的活跃度是我们极为关注的一个要点。社区越活跃，解决问题的速度越快，框架也会越来越完善，不然当我们碰到问题，就不得不自己解决。而对于团队来说，也就意味着我们不得不自己去维护框架的源码，这对于团队来说也将会是一个很大的负担。</p>
-<ul>
-<li>Dubbo ：<a href="https://github.com/dubbo" target="_blank" rel="noopener">https://github.com/dubbo</a></li>
-</ul>
-<p><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180619134600.png" alt="来自github"></p>
-<ul>
-<li>Spring Cloud ：<a href="https://github.com/spring-cloud" target="_blank" rel="noopener">https://github.com/spring-cloud</a></li>
-</ul>
-<p><img src="http://pajxnp8qc.bkt.clouddn.com//H_20180619134630.png" alt="来自github"><br><strong>小结：</strong>在社区活跃度上，Spring Cloud毋庸置疑的优于Dubbo，这对于没有大量精力与财力维护这部分开源内容的团队来说，Spring Cloud会是更优的选择。</p>
-<h4 id="R3：架构完整度"><a href="#R3：架构完整度" class="headerlink" title="R3：架构完整度"></a>R3：架构完整度</h4><p>根据微服务架构在各方面的要素，看看Spring Cloud和Dubbo都提供了哪些支持：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Dubbo</th>
-<th>Spring Cloud</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>服务注册中心</td>
-<td>Zookeeper</td>
-<td>Spring Cloud Netflix Eureka</td>
-</tr>
-<tr>
-<td>服务调用方式</td>
-<td>RPC</td>
-<td>REST API</td>
-</tr>
-<tr>
-<td>服务网关</td>
-<td>无</td>
-<td>Spring Cloud Netflix Zuul</td>
-</tr>
-<tr>
-<td>断路器</td>
-<td>不完善</td>
-<td>Spring Cloud Netflix Hystrix</td>
-</tr>
-<tr>
-<td>分布式配置</td>
-<td>无</td>
-<td>Spring Cloud Config</td>
-</tr>
-<tr>
-<td>服务跟踪</td>
-<td>无</td>
-<td>Spring Cloud Sleuth</td>
-</tr>
-<tr>
-<td>消息总线</td>
-<td>无</td>
-<td>Spring Cloud Bus</td>
-</tr>
-<tr>
-<td>数据流</td>
-<td>无</td>
-<td>Spring Cloud Stream</td>
-</tr>
-<tr>
-<td>批量任务</td>
-<td>无</td>
-<td>Spring Cloud Task</td>
-</tr>
-<tr>
-<td>……</td>
-<td>……</td>
-<td>……</td>
-</tr>
-</tbody>
-</table>
-<p>Dubbo对于上表中总结为“无”的组件不代表不能实现，而只是Dubbo框架自身不提供，需要另外整合以实现对应的功能，比如：</p>
-<p>分布式配置：可以使用淘宝的diamond、百度的disconf来实现分布式配置管理。但是Spring Cloud中的Config组件除了提供配置管理之外，由于其存储可以使用git，因此它天然的实现了配置内容的版本管理，可以完美的与应用版本管理整合起来。<br>服务跟踪：可以使用京东开源的Hydra<br>批量任务：可以使用当当开源的Elastic-Job<br>……</p>
-<h4 id="R4：对比总结"><a href="#R4：对比总结" class="headerlink" title="R4：对比总结"></a>R4：对比总结</h4><p>通过上面几个环节上的分析，打个不恰当的比喻：使用Dubbo构建的微服务架构就像组装电脑，各环节我们的选择自由度很高，但是最终结果很有可能因为一条内存质量不行就点不亮了，总是让人不怎么放心，但是如果你是一名高手，那这些都不是问题；而Spring Cloud就像品牌机，在Spring Source的整合下，做了大量的兼容性测试，保证了机器拥有更高的稳定性，但是如果要在使用非原装组件外的东西，就需要对其基础有足够的了解。</p>
-<blockquote>
-<p><strong><em>参考文章：</em></strong><br><a href="http://blog.sina.com.cn/s/blog_493a84550102wkna.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_493a84550102wkna.html</a><br><a href="http://blog.sina.com.cn/s/blog_493a84550102wkp2.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_493a84550102wkp2.html</a><br><a href="http://blog.didispace.com/microservice-framework/" target="_blank" rel="noopener">http://blog.didispace.com/microservice-framework/</a></p>
-</blockquote>
+        <h3 id="Lambda中新增的操作符"><a href="#Lambda中新增的操作符" class="headerlink" title="Lambda中新增的操作符"></a>Lambda中新增的操作符</h3><h4 id="新的操作符"><a href="#新的操作符" class="headerlink" title="新的操作符"></a>新的操作符</h4><p>Java8中引入了一个新的操作符 “-&gt;” ，该操作符称为箭头操作符或 Lambda 操作符</p>
+<h4 id="操作符结构"><a href="#操作符结构" class="headerlink" title="操作符结构"></a>操作符结构</h4><p>箭头操作符将Lambda表达式拆分成两部分：<br>○ 左侧：Lambda 表达式的参数列表<br>○ 右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体</p>
+<h3 id="Lambda表达式语法格式"><a href="#Lambda表达式语法格式" class="headerlink" title="Lambda表达式语法格式"></a>Lambda表达式语法格式</h3><h4 id="格式一：无参数，无返回值"><a href="#格式一：无参数，无返回值" class="headerlink" title="格式一：无参数，无返回值"></a>格式一：无参数，无返回值</h4><font color="red"><strong>() -&gt; System.out.println(“Hello Lambda!”)</strong></font>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">0</span>;   <span class="comment">//jdk 1.7 must be final</span></span><br><span class="line">Runnable r = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span> + num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">r.run();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"-------------------------------"</span>);</span><br><span class="line"></span><br><span class="line">Runnable r1 = () -&gt; System.out.println(<span class="string">"Hello Lambda!"</span>);</span><br><span class="line">r1.run();</span><br></pre></td></tr></table></figure>
+<h4 id="格式二：有一个参数，并且无返回值"><a href="#格式二：有一个参数，并且无返回值" class="headerlink" title="格式二：有一个参数，并且无返回值"></a>格式二：有一个参数，并且无返回值</h4><font color="red"><strong>(x) -&gt; System.out.println(x)</strong></font>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Consumer&lt;String&gt; con = (x) -&gt; System.out.println(x);</span><br><span class="line">con.accept(<span class="string">"Hello Java8"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="格式三：若只有一个参数，小括号可以省略不写"><a href="#格式三：若只有一个参数，小括号可以省略不写" class="headerlink" title="格式三：若只有一个参数，小括号可以省略不写"></a>格式三：若只有一个参数，小括号可以省略不写</h4><font color="red"><strong>x -&gt; System.out.println(x)</strong></font>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Consumer&lt;String&gt; con = x -&gt; System.out.println(x);</span><br><span class="line">con.accept(<span class="string">"Hello Java8"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="格式四：有两个以上的参数，有返回值，并且-Lambda-体中有多条语句"><a href="#格式四：有两个以上的参数，有返回值，并且-Lambda-体中有多条语句" class="headerlink" title="格式四：有两个以上的参数，有返回值，并且 Lambda 体中有多条语句"></a>格式四：有两个以上的参数，有返回值，并且 Lambda 体中有多条语句</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Comparator&lt;Integer&gt; com = (x, y) -&gt; &#123;</span><br><span class="line">    System.out.println(<span class="string">"Functional Inteface"</span>);</span><br><span class="line">    <span class="keyword">return</span> Integer.compare(x, y);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="格式五：若-Lambda-体中只有一条语句，-return-和-大括号都可以省略不写"><a href="#格式五：若-Lambda-体中只有一条语句，-return-和-大括号都可以省略不写" class="headerlink" title="格式五：若 Lambda 体中只有一条语句， return 和 大括号都可以省略不写"></a>格式五：若 Lambda 体中只有一条语句， return 和 大括号都可以省略不写</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Comparator&lt;Integer&gt; com = (Integer x, Integer y) -&gt; Integer.compare(x, y);</span><br></pre></td></tr></table></figure>
+<h4 id="格式六：Lambda-表达式的参数列表的数据类型可以省略不写"><a href="#格式六：Lambda-表达式的参数列表的数据类型可以省略不写" class="headerlink" title="格式六：Lambda 表达式的参数列表的数据类型可以省略不写"></a>格式六：Lambda 表达式的参数列表的数据类型可以省略不写</h4><p>因为JVM编译器通过上下文推断出数据类型，即“类型推断”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(x, y) -&gt; Integer.compare(x, y);</span><br></pre></td></tr></table></figure>
+<h4 id="格式总结"><a href="#格式总结" class="headerlink" title="格式总结"></a>格式总结</h4><p>上联：左右遇一括号省<br>下联：左侧推断类型省<br>横批：能省则省</p>
+<h3 id="函数式接口简介"><a href="#函数式接口简介" class="headerlink" title="函数式接口简介"></a>函数式接口简介</h3><font color="red"><strong>Lambda 表达式需要“函数式接口”的支持</strong></font>
+
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>接口中只有一个抽象方法的接口，称为函数式接口；可以使用注解 @FunctionalInterface 修饰，可以检查是否是函数式接口。</p>
+<h4 id="需求：对一个数进行运算"><a href="#需求：对一个数进行运算" class="headerlink" title="需求：对一个数进行运算"></a>需求：对一个数进行运算</h4><p>1) 自定一个函数式接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyFun</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getValue</span><span class="params">(Integer num)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2) 核心的运算方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Integer <span class="title">operation</span><span class="params">(Integer num, MyFun mf)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mf.getValue(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3) 测试一下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test6</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Integer num = operation(<span class="number">100</span>, (x) -&gt; x * x);</span><br><span class="line">    System.out.println(num);</span><br><span class="line">    System.out.println(operation(<span class="number">200</span>, (y) -&gt; y + <span class="number">200</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="核心函数式接口"><a href="#核心函数式接口" class="headerlink" title="核心函数式接口"></a>核心函数式接口</h3><h4 id="1-Consumer-消费型接口-——-void-accept-T-t"><a href="#1-Consumer-消费型接口-——-void-accept-T-t" class="headerlink" title="(1) Consumer : 消费型接口 —— void accept(T t);"></a>(1) Consumer<t> : 消费型接口 <font color="white">——</font> <font color="red"><strong>void accept(T t);</strong></font></t></h4><p> <em>需求：消费1W块钱</em><br> ● 业务逻辑<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">happy</span><span class="params">(<span class="keyword">double</span> money, Consumer&lt;Double&gt; con)</span></span>&#123;</span><br><span class="line">    con.accept(money);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> ● 测试方法<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    happy(<span class="number">10000</span>, (m) -&gt; System.out.println(<span class="string">"I happy cost："</span> + m + <span class="string">"Y"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-Supplier-供给型接口-——-T-get"><a href="#2-Supplier-供给型接口-——-T-get" class="headerlink" title="(2) Supplier : 供给型接口 —— T get();"></a>(2) Supplier<t> : 供给型接口 <font color="white">——</font> <font color="red"><strong>T get();</strong></font></t></h4><p> <em>需求：产生指定个数的整数，并放入集合中</em><br> ● 业务逻辑<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getNumList</span><span class="params">(<span class="keyword">int</span> num, Supplier&lt;Integer&gt; sup)</span></span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">        Integer n = sup.get();</span><br><span class="line">        list.add(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> ● 测试方法<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List&lt;Integer&gt; numList = getNumList(<span class="number">10</span>, () -&gt; (<span class="keyword">int</span>)(Math.random() * <span class="number">100</span>));</span><br><span class="line">    <span class="keyword">for</span> (Integer num : numList) &#123;</span><br><span class="line">        System.out.println(num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-Function-lt-T-R-gt-函数型接口-——-R-apply-T-t"><a href="#3-Function-lt-T-R-gt-函数型接口-——-R-apply-T-t" class="headerlink" title="(3) Function&lt;T, R&gt; : 函数型接口 —— R apply(T t);"></a>(3) Function&lt;T, R&gt; : 函数型接口 <font color="white">——</font> <font color="red"><strong>R apply(T t);</strong></font></h4><p> <em>需求：用于处理字符串</em><br> ● 业务逻辑<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">strHandler</span><span class="params">(String str, Function&lt;String, String&gt; fun)</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> fun.apply(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> ● 测试方法<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String newStr = strHandler(<span class="string">"\t\t\t My Baby YZ   "</span>, (str) -&gt; str.trim());</span><br><span class="line">    System.out.println(newStr);</span><br><span class="line">    String subStr = strHandler(<span class="string">"My Baby FF"</span>, (str) -&gt; str.substring(<span class="number">2</span>, <span class="number">5</span>));</span><br><span class="line">    System.out.println(subStr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-Predicate-断言型接口-——-boolean-test-T-t"><a href="#4-Predicate-断言型接口-——-boolean-test-T-t" class="headerlink" title="(4) Predicate : 断言型接口 —— boolean test(T t);"></a>(4) Predicate<t> : 断言型接口 <font color="white">——</font> <font color="red"><strong>boolean test(T t);</strong></font></t></h4><p> <em>需求：将满足条件的字符串，放入集合中</em><br> ● 业务逻辑<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">filterStr</span><span class="params">(List&lt;String&gt; list, Predicate&lt;String&gt; pre)</span></span>&#123;</span><br><span class="line">    List&lt;String&gt; strList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String str : list) &#123;</span><br><span class="line">        <span class="keyword">if</span>(pre.test(str))&#123;</span><br><span class="line">            strList.add(str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> strList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> ● 测试方法<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List&lt;String&gt; list = Arrays.asList(<span class="string">"Hello"</span>, <span class="string">"atguigu"</span>, <span class="string">"Lambda"</span>, <span class="string">"www"</span>, <span class="string">"ok"</span>);</span><br><span class="line">    List&lt;String&gt; strList = filterStr(list, (s) -&gt; s.length() &gt; <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">for</span> (String str : strList) &#123;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Lambda表达式与函数式接口是亲兄弟</p>
 
       
     </div>
@@ -620,7 +536,7 @@
       </li>
       <li class="post-copyright-link">
         <strong>本文链接：</strong>
-        <a href="/SpringCloud-001/" title="【SpringCloud笔记】01、从微服务框架到SpringCloud">【SpringCloud笔记】01、从微服务框架到SpringCloud</a>
+        <a href="/JAVA8-003/" title="【JAVA8笔记】03、Lambda语法和函数式接口">【JAVA8笔记】03、Lambda语法和函数式接口</a>
       </li>
       <li class="post-copyright-license">
         <strong>版权声明： </strong>
@@ -644,9 +560,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringCloud/" rel="tag"># SpringCloud</a>
+            <a href="/tags/Java8/" rel="tag"># Java8</a>
           
-            <a href="/tags/微服务框架/" rel="tag"># 微服务框架</a>
+            <a href="/tags/Lambda/" rel="tag"># Lambda</a>
           
         </div>
       
@@ -659,15 +575,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/SpringCloud-010/" rel="next" title="【SpringCloud笔记】10、Bus - 消息总线">
+                <i class="fa fa-chevron-left"></i> 【SpringCloud笔记】10、Bus - 消息总线
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/SpringCloud-002/" rel="prev" title="【SpringCloud笔记】02、Eureka - 服务的注册与发现">
-                【SpringCloud笔记】02、Eureka - 服务的注册与发现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -838,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是微服务框架"><span class="nav-number">1.</span> <span class="nav-text">什么是微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netflix的微服务框架"><span class="nav-number">2.</span> <span class="nav-text">Netflix的微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微服务化要点关联图"><span class="nav-number">3.</span> <span class="nav-text">微服务化要点关联图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud"><span class="nav-number">4.</span> <span class="nav-text">Spring Cloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud-VS-Dubbo"><span class="nav-number">5.</span> <span class="nav-text">Spring Cloud VS Dubbo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R1：背景"><span class="nav-number">5.1.</span> <span class="nav-text">R1：背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R2：社区活跃度"><span class="nav-number">5.2.</span> <span class="nav-text">R2：社区活跃度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R3：架构完整度"><span class="nav-number">5.3.</span> <span class="nav-text">R3：架构完整度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R4：对比总结"><span class="nav-number">5.4.</span> <span class="nav-text">R4：对比总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda中新增的操作符"><span class="nav-number">1.</span> <span class="nav-text">Lambda中新增的操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新的操作符"><span class="nav-number">1.1.</span> <span class="nav-text">新的操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作符结构"><span class="nav-number">1.2.</span> <span class="nav-text">操作符结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda表达式语法格式"><span class="nav-number">2.</span> <span class="nav-text">Lambda表达式语法格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#格式一：无参数，无返回值"><span class="nav-number">2.1.</span> <span class="nav-text">格式一：无参数，无返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式二：有一个参数，并且无返回值"><span class="nav-number">2.2.</span> <span class="nav-text">格式二：有一个参数，并且无返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式三：若只有一个参数，小括号可以省略不写"><span class="nav-number">2.3.</span> <span class="nav-text">格式三：若只有一个参数，小括号可以省略不写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式四：有两个以上的参数，有返回值，并且-Lambda-体中有多条语句"><span class="nav-number">2.4.</span> <span class="nav-text">格式四：有两个以上的参数，有返回值，并且 Lambda 体中有多条语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式五：若-Lambda-体中只有一条语句，-return-和-大括号都可以省略不写"><span class="nav-number">2.5.</span> <span class="nav-text">格式五：若 Lambda 体中只有一条语句， return 和 大括号都可以省略不写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式六：Lambda-表达式的参数列表的数据类型可以省略不写"><span class="nav-number">2.6.</span> <span class="nav-text">格式六：Lambda 表达式的参数列表的数据类型可以省略不写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式总结"><span class="nav-number">2.7.</span> <span class="nav-text">格式总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式接口简介"><span class="nav-number">3.</span> <span class="nav-text">函数式接口简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求：对一个数进行运算"><span class="nav-number">3.2.</span> <span class="nav-text">需求：对一个数进行运算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心函数式接口"><span class="nav-number">4.</span> <span class="nav-text">核心函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Consumer-消费型接口-——-void-accept-T-t"><span class="nav-number">4.1.</span> <span class="nav-text">(1) Consumer : 消费型接口 —— void accept(T t);</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Supplier-供给型接口-——-T-get"><span class="nav-number">4.2.</span> <span class="nav-text">(2) Supplier : 供给型接口 —— T get();</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Function-lt-T-R-gt-函数型接口-——-R-apply-T-t"><span class="nav-number">4.3.</span> <span class="nav-text">(3) Function&lt;T, R&gt; : 函数型接口 —— R apply(T t);</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Predicate-断言型接口-——-boolean-test-T-t"><span class="nav-number">4.4.</span> <span class="nav-text">(4) Predicate : 断言型接口 —— boolean test(T t);</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
