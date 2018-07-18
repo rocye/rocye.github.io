@@ -4,8 +4,70 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/JAVA8-005/</loc>
+    <lastmod>2018-07-18T08:39:36.778Z</lastmod>
+    <data>
+        <display>
+        <title>【JAVA8笔记】05、Stream API</title>
+        <pubTime>2018-07-18T06:42:21.000Z</pubTime>
+        
+        <tag>Java8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JAVA8笔记" url="http://blog.rocye.cn/categories/JAVA8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.rocye.cn/JAVA8-004/</loc>
+    <lastmod>2018-07-18T06:39:31.653Z</lastmod>
+    <data>
+        <display>
+        <title>【JAVA8笔记】04、方法引用</title>
+        <pubTime>2018-07-18T05:47:11.000Z</pubTime>
+        
+        <tag>Java8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JAVA8笔记" url="http://blog.rocye.cn/categories/JAVA8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.rocye.cn/SpringCloud-010/</loc>
+    <lastmod>2018-07-18T06:20:06.349Z</lastmod>
+    <data>
+        <display>
+        <title>【SpringCloud笔记】10、Bus - 消息总线</title>
+        <pubTime>2018-07-11T07:15:54.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+        <tag>Bus</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/JAVA8-003/</loc>
-    <lastmod>2018-07-17T08:28:10.326Z</lastmod>
+    <lastmod>2018-07-18T06:18:36.247Z</lastmod>
     <data>
         <display>
         <title>【JAVA8笔记】03、Lambda语法和函数式接口</title>
@@ -123,9 +185,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Ribbon</tag>
-         
         <tag>Hystrix</tag>
+         
+        <tag>Ribbon</tag>
          
          
            
@@ -171,9 +233,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Hystrix</tag>
-         
         <tag>Turbine</tag>
+         
+        <tag>Hystrix</tag>
          
          
            
@@ -265,28 +327,6 @@
            
              
               <breadCrumb title="JAVA8笔记" url="http://blog.rocye.cn/categories/JAVA8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.rocye.cn/SpringCloud-010/</loc>
-    <lastmod>2018-07-17T07:20:05.443Z</lastmod>
-    <data>
-        <display>
-        <title>【SpringCloud笔记】10、Bus - 消息总线</title>
-        <pubTime>2018-07-11T07:15:54.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-        <tag>Bus</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud笔记" url="http://blog.rocye.cn/categories/SpringCloud%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
