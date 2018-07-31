@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="OpXZN2WdAvHb8imBYSmMWu6jd8f_0G9JJEeyrPYd6qQ" />
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="ulRpbOHQ5k" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="传统时间格式化的线程安全问题传统时间(非线程安全的)12345678910111213141516SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyyMMdd&quot;);Callable&amp;lt;Date&amp;gt; task = new Callable&amp;lt;Date&amp;gt;() &amp;#123;    @Override    public Date call(">
+<meta name="keywords" content="Java8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【JAVA8笔记】07、新时间和日期">
+<meta property="og:url" content="http://blog.rocye.cn/JAVA8-007/index.html">
+<meta property="og:site_name" content="Hi, Rocye">
+<meta property="og:description" content="传统时间格式化的线程安全问题传统时间(非线程安全的)12345678910111213141516SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyyMMdd&quot;);Callable&amp;lt;Date&amp;gt; task = new Callable&amp;lt;Date&amp;gt;() &amp;#123;    @Override    public Date call(">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-31T01:39:08.863Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【JAVA8笔记】07、新时间和日期">
+<meta name="twitter:description" content="传统时间格式化的线程安全问题传统时间(非线程安全的)12345678910111213141516SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyyMMdd&quot;);Callable&amp;lt;Date&amp;gt; task = new Callable&amp;lt;Date&amp;gt;() &amp;#123;    @Override    public Date call(">
+
+
+
+
+
+
+  <link rel="canonical" href="http://blog.rocye.cn/JAVA8-007/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【JAVA8笔记】07、新时间和日期 | Hi, Rocye</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bfc1740fc4937bf29bbedff4427c2734";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Rocye</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">码农能走多远</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.rocye.cn/JAVA8-007/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocye">
+      <meta itemprop="description" content="IT技术分享，个人知识沉淀">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Rocye">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【JAVA8笔记】07、新时间和日期
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-20 17:27:03" itemprop="dateCreated datePublished" datetime="2018-07-20T17:27:03+08:00">2018-07-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-31 09:39:08" itemprop="dateModified" datetime="2018-07-31T09:39:08+08:00">2018-07-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA8笔记/" itemprop="url" rel="index"><span itemprop="name">JAVA8笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="传统时间格式化的线程安全问题"><a href="#传统时间格式化的线程安全问题" class="headerlink" title="传统时间格式化的线程安全问题"></a>传统时间格式化的线程安全问题</h3><h4 id="传统时间-非线程安全的"><a href="#传统时间-非线程安全的" class="headerlink" title="传统时间(非线程安全的)"></a>传统时间(非线程安全的)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyyMMdd"</span>);</span><br><span class="line">Callable&lt;Date&gt; task = <span class="keyword">new</span> Callable&lt;Date&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sdf.parse(<span class="string">"20161121"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">ExecutorService pool = Executors.newFixedThreadPool(<span class="number">50</span>);</span><br><span class="line">List&lt;Future&lt;Date&gt;&gt; results = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">    results.add(pool.submit(task));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (Future&lt;Date&gt; future : results) &#123;</span><br><span class="line">    System.out.println(future.get());</span><br><span class="line">&#125;</span><br><span class="line">pool.shutdown();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>Exception in thread “main” java.util.concurrent.ExecutionException: java.lang.NumberFormatException: For input string: “”<br>    at java.util.concurrent.FutureTask.report(FutureTask.java:122)<br>    at java.util.concurrent.FutureTask.get(FutureTask.java:192)</em></p>
+</blockquote>
+<h4 id="传统解决办法-加锁"><a href="#传统解决办法-加锁" class="headerlink" title="传统解决办法(加锁)"></a>传统解决办法(加锁)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateFormatThreadLocal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ThreadLocal&lt;DateFormat&gt; df = </span><br><span class="line">                <span class="keyword">new</span> ThreadLocal&lt;DateFormat&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">protected</span> DateFormat <span class="title">initialValue</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyyMMdd"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Date <span class="title">convert</span><span class="params">(String source)</span> </span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ParseException</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> df.get().parse(source);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Callable&lt;Date&gt; task = <span class="keyword">new</span> Callable&lt;Date&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> DateFormatThreadLocal.convert(<span class="string">"20161121"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">ExecutorService pool = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">List&lt;Future&lt;Date&gt;&gt; results = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    results.add(pool.submit(task));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (Future&lt;Date&gt; future : results) &#123;</span><br><span class="line">    System.out.println(future.get());</span><br><span class="line">&#125;</span><br><span class="line">pool.shutdown();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>Mon Nov 21 00:00:00 CST 2016<br>Mon Nov 21 00:00:00 CST 2016<br>Mon Nov 21 00:00:00 CST 2016<br>Mon Nov 21 00:00:00 CST 2016<br>…</em></p>
+</blockquote>
+<h4 id="Java8时间-线程安全的"><a href="#Java8时间-线程安全的" class="headerlink" title="Java8时间(线程安全的)"></a>Java8时间(线程安全的)</h4><p>因为不管做什么改变它都产生新的实例，所以是线程安全的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">DateTimeFormatter dtf = DateTimeFormatter.ofPattern(<span class="string">"yyyyMMdd"</span>);</span><br><span class="line">Callable&lt;LocalDate&gt; task = <span class="keyword">new</span> Callable&lt;LocalDate&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> LocalDate <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        LocalDate ld = LocalDate.parse(<span class="string">"20161121"</span>, dtf);</span><br><span class="line">        <span class="keyword">return</span> ld;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ExecutorService pool = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">List&lt;Future&lt;LocalDate&gt;&gt; results = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    results.add(pool.submit(task));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (Future&lt;LocalDate&gt; future : results) &#123;</span><br><span class="line">    System.out.println(future.get());</span><br><span class="line">&#125;</span><br><span class="line">pool.shutdown();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>2016-11-21<br>2016-11-21<br>2016-11-21<br>2016-11-21<br>…</em></p>
+</blockquote>
+<h3 id="本地时间与时间戳"><a href="#本地时间与时间戳" class="headerlink" title="本地时间与时间戳"></a>本地时间与时间戳</h3><h4 id="LocalDate、LocalTime、LocalDateTime"><a href="#LocalDate、LocalTime、LocalDateTime" class="headerlink" title="LocalDate、LocalTime、LocalDateTime"></a>LocalDate、LocalTime、LocalDateTime</h4><p>LocalDate、LocalTime、LocalDateTime 类的实例是不可变的对象，分别表示使用ISO-8601日历系统的日期、时间、日期和时间。它们提供了简单的日期或时间，并不包含当前的时间信息，也不包含与时区相关的信息。<br>● <font color="red">now()</font> ：<br>静态方法，根据当前时间创建对象<br>● <font color="red">of()</font> ：<br>静态方法，根据指定日期/时间创建对象<br>● <font color="red">plusDays, plusWeeks, plusMonths, plusYears</font> ：<br>向当前LocalDate对象添加几天、几周、几个月、几年<br>● <font color="red">minusDays, minusWeeks, minusMonths, minusYears</font> ：<br>从当前LocalDate对象减去几天、几周、几个月、几年<br>● <font color="red">plus, minus</font> ：<br>添加或减少一个Duration或Period<br>● <font color="red">withDayOfMonth, withDayOfYear, withMonth, withYear</font> ：<br>将月份天数、年份天数、月份、年份修改为指定的值并返回新的LocalDate对象<br>● <font color="red">getDayOfMonth</font> ：<br>获得月份天数(1-31)<br>● <font color="red">getDayOfYear</font> ：<br>获得年份天数(1-366)<br>● <font color="red">getDayOfWeek</font> ：<br>获得星期几(返回一个DayOfWeek枚举值)<br>● <font color="red">getMonth</font> ：<br>获得月份,返回一个Month枚举值<br>● <font color="red">getMonthValue</font> ：<br>获得月份(1-12)<br>● <font color="red">getYear</font> ：<br>获得年份<br>● <font color="red">until</font> ：<br>获得两个日期之间的Period对象，或者指定ChronoUnits的数字<br>● <font color="red">isBefore, isAfter</font> ：<br>比较两个LocalDate<br>● <font color="red">isLeapYear</font> ：<br>判断是否是闰年</p>
+<p><strong><em>示例：</em></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LocalDateTime ldt = LocalDateTime.now();</span><br><span class="line">System.out.println(ldt);</span><br><span class="line"></span><br><span class="line">LocalDateTime ld2 = LocalDateTime.of(<span class="number">2016</span>, <span class="number">11</span>, <span class="number">21</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>);</span><br><span class="line">System.out.println(ld2);</span><br><span class="line"></span><br><span class="line">LocalDateTime ldt3 = ld2.plusYears(<span class="number">20</span>);</span><br><span class="line">System.out.println(ldt3);</span><br><span class="line"></span><br><span class="line">LocalDateTime ldt4 = ld2.minusMonths(<span class="number">2</span>);</span><br><span class="line">System.out.println(ldt4);</span><br><span class="line"></span><br><span class="line">System.out.println(ldt.getYear());</span><br><span class="line">System.out.println(ldt.getMonthValue());</span><br><span class="line">System.out.println(ldt.getDayOfMonth());</span><br><span class="line">System.out.println(ldt.getHour());</span><br><span class="line">System.out.println(ldt.getMinute());</span><br><span class="line">System.out.println(ldt.getSecond());</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><em>2017-10-19T12:10:06.962<br>2016-11-21T10:10:10<br>2036-11-21T10:10:10<br>2016-09-21T10:10:10<br>2017<br>10<br>19<br>12<br>10<br>6</em></p>
+</blockquote>
+<h4 id="Instant-时间戳"><a href="#Instant-时间戳" class="headerlink" title="Instant 时间戳"></a>Instant 时间戳</h4><p>用于“时间戳”的运算，它是以Unix元年(传统的设定为UTC时区1970年1月1日午夜时分)开始所经历的毫秒数进行运算。<br>PS：默认使用 UTC 时区。</p>
+<p><strong><em>示例：</em></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Instant ins1 = Instant.now();	</span><br><span class="line">Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">Instant ins2 = Instant.now();</span><br><span class="line">System.out.println(<span class="string">"Cost time："</span> + Duration.between(ins1, ins2));</span><br><span class="line"></span><br><span class="line">LocalDate ld1 = LocalDate.now();</span><br><span class="line">LocalDate ld2 = LocalDate.of(<span class="number">2011</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">Period pe = Period.between(ld2, ld1);</span><br><span class="line">System.out.println(pe.getYears());</span><br><span class="line">System.out.println(pe.getMonths());</span><br><span class="line">System.out.println(pe.getDays());</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><em>2017-10-19T04:14:31.701Z<br>2017-10-19T12:14:31.701+08:00<br>701000000<br>1970-01-01T00:00:05Z</em></p>
+</blockquote>
+<h4 id="Duration-和-Period"><a href="#Duration-和-Period" class="headerlink" title="Duration 和 Period"></a>Duration 和 Period</h4><p>Duration: 用于计算两个“时间”间隔<br>Period: 用于计算两个“日期”间隔</p>
+<p><strong><em>示例：</em></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Instant ins1 = Instant.now();	</span><br><span class="line">Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">Instant ins2 = Instant.now();</span><br><span class="line">System.out.println(<span class="string">"Cost time："</span> + Duration.between(ins1, ins2));</span><br><span class="line"></span><br><span class="line">LocalDate ld1 = LocalDate.now();</span><br><span class="line">LocalDate ld2 = LocalDate.of(<span class="number">2011</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">Period pe = Period.between(ld2, ld1);</span><br><span class="line">System.out.println(pe.getYears());</span><br><span class="line">System.out.println(pe.getMonths());</span><br><span class="line">System.out.println(pe.getDays());</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><em>Cost time：PT1S<br>6<br>9<br>18</em></p>
+</blockquote>
+<h3 id="时间校正器-TemporalAdjuster"><a href="#时间校正器-TemporalAdjuster" class="headerlink" title="时间校正器(TemporalAdjuster)"></a>时间校正器(TemporalAdjuster)</h3><h4 id="将日期调整到“下个周日”"><a href="#将日期调整到“下个周日”" class="headerlink" title="将日期调整到“下个周日”"></a>将日期调整到“下个周日”</h4><p>TemporalAdjusters : 该类通过静态方法提供了大量的常用TemporalAdjuster 的实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LocalDate nextSunday = LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.SUNDAY));</span><br></pre></td></tr></table></figure>
+<h4 id="自定义时间校正器"><a href="#自定义时间校正器" class="headerlink" title="自定义时间校正器"></a>自定义时间校正器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LocalDateTime ldt = LocalDateTime.now();</span><br><span class="line">System.out.println(ldt);</span><br><span class="line"></span><br><span class="line">LocalDateTime ldt2 = ldt.withDayOfMonth(<span class="number">10</span>);</span><br><span class="line">System.out.println(ldt2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Next WorkingDay</span></span><br><span class="line">LocalDateTime ldt5 = ldt.with((l) -&gt; &#123;</span><br><span class="line">    LocalDateTime ldt4 = (LocalDateTime) l;</span><br><span class="line">    </span><br><span class="line">    DayOfWeek dow = ldt4.getDayOfWeek();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(dow.equals(DayOfWeek.FRIDAY))&#123;</span><br><span class="line">        <span class="keyword">return</span> ldt4.plusDays(<span class="number">3</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(dow.equals(DayOfWeek.SATURDAY))&#123;</span><br><span class="line">        <span class="keyword">return</span> ldt4.plusDays(<span class="number">2</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ldt4.plusDays(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">System.out.println(ldt5);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>2017-10-19T12:24:30.968<br>2017-10-10T12:24:30.968<br>2017-10-20T12:24:30.968</em></p>
+</blockquote>
+<h3 id="时间格式化与时区的处理"><a href="#时间格式化与时区的处理" class="headerlink" title="时间格式化与时区的处理"></a>时间格式化与时区的处理</h3><h4 id="解析与格式化"><a href="#解析与格式化" class="headerlink" title="解析与格式化"></a>解析与格式化</h4><p>java.time.format.DateTimeFormatter 类，该类提供了三种格式化方法：<br>1、预定义的标准格式<br>2、语言环境相关的格式<br>3、自定义的格式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE;</span></span><br><span class="line">DateTimeFormatter dtf = DateTimeFormatter.ofPattern(<span class="string">"yyyy年MM月dd日 HH:mm:ss E"</span>);</span><br><span class="line">LocalDateTime ldt = LocalDateTime.now();</span><br><span class="line">String strDate = ldt.format(dtf);</span><br><span class="line">System.out.println(strDate);</span><br><span class="line"></span><br><span class="line">LocalDateTime newLdt = ldt.parse(strDate, dtf);</span><br><span class="line">System.out.println(newLdt);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>2017年10月19日 14:02:02 星期四<br>2017-10-19T14:02:02</em></p>
+</blockquote>
+<h4 id="时区的处理"><a href="#时区的处理" class="headerlink" title="时区的处理"></a>时区的处理</h4><p>Java8 中加入了对时区的支持，带时区的时间为分别为：<br>ZonedDate、ZonedTime、ZonedDateTime<br>其中每个时区都对应着ID，地区ID都为“{区域}/{城市}”的格式，例如：Asia/Shanghai 等</p>
+<p>ZoneId：该类中包含了所有的时区信息<br>getAvailableZoneIds() : 可以获取所有时区时区信息<br>of(id) : 用指定的时区信息获取ZoneId 对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; set = ZoneId.getAvailableZoneIds();</span><br><span class="line"><span class="comment">//set.forEach(System.out::println);</span></span><br><span class="line"></span><br><span class="line">LocalDateTime ldt = LocalDateTime.now(ZoneId.of(<span class="string">"Asia/Shanghai"</span>));</span><br><span class="line">System.out.println(ldt);</span><br><span class="line"></span><br><span class="line">ZonedDateTime zdt = ZonedDateTime.now(ZoneId.of(<span class="string">"US/Pacific"</span>));</span><br><span class="line">System.out.println(zdt);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>2017-10-19T14:03:36.363<br>2017-10-18T23:03:36.381-07:00[US/Pacific]</em></p>
+</blockquote>
+<h3 id="与传统日期处理的转换"><a href="#与传统日期处理的转换" class="headerlink" title="与传统日期处理的转换"></a>与传统日期处理的转换</h3><table>
+<thead>
+<tr>
+<th>类</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>java.time.Instant — java.util.Date</td>
+<td>Date.from(instant) — date.toInstant()</td>
+</tr>
+<tr>
+<td>java.time.Instant — java.sql.Timestamp</td>
+<td>Timestamp.from(instant) — timestamp.toInstant()</td>
+</tr>
+<tr>
+<td>java.time.ZonedDateTime — java.util.GregorianCalendar</td>
+<td>GregorianCalendar.from(zonedDateTime) — cal.toZonedDateTime()</td>
+</tr>
+<tr>
+<td>java.time.LocalDate — java.sql.Time</td>
+<td>Date.valueOf(localDate) — date.toLocalDate()</td>
+</tr>
+<tr>
+<td>java.time.LocalTime — java.sql.Time</td>
+<td>Date.valueOf(localDate) — date.toLocalTime()</td>
+</tr>
+<tr>
+<td>java.time.LocalDateTime — java.sql.Timestamp</td>
+<td>Timestamp.valueOf(localDateTime) — timestamp.toLocalDateTime()</td>
+</tr>
+<tr>
+<td>java.time.ZoneId — java.util.TimeZone</td>
+<td>Timezone.getTimeZone(id) — timeZone.toZoneId()</td>
+</tr>
+<tr>
+<td>java.time.format.DateTimeFormatter — java.text.DateFormat</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Java8中的新时间和日期明显更加强大 </p>
+
+      
+    </div>
+
+    
+
+<div>
+ 
+ 
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>本文作者：</strong>Rocye
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/JAVA8-007/" title="【JAVA8笔记】07、新时间和日期">【JAVA8笔记】07、新时间和日期</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+  
+</div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java8/" rel="tag"># Java8</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JAVA8-006/" rel="next" title="【JAVA8笔记】06、Optional容器类">
+                <i class="fa fa-chevron-left"></i> 【JAVA8笔记】06、Optional容器类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+   <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Rocye" />
+            
+              <p class="site-author-name" itemprop="name">Rocye</p>
+              <p class="site-description motion-element" itemprop="description">IT技术分享，个人知识沉淀</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#传统时间格式化的线程安全问题"><span class="nav-number">1.</span> <span class="nav-text">传统时间格式化的线程安全问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#传统时间-非线程安全的"><span class="nav-number">1.1.</span> <span class="nav-text">传统时间(非线程安全的)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传统解决办法-加锁"><span class="nav-number">1.2.</span> <span class="nav-text">传统解决办法(加锁)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java8时间-线程安全的"><span class="nav-number">1.3.</span> <span class="nav-text">Java8时间(线程安全的)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地时间与时间戳"><span class="nav-number">2.</span> <span class="nav-text">本地时间与时间戳</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalDate、LocalTime、LocalDateTime"><span class="nav-number">2.1.</span> <span class="nav-text">LocalDate、LocalTime、LocalDateTime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instant-时间戳"><span class="nav-number">2.2.</span> <span class="nav-text">Instant 时间戳</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Duration-和-Period"><span class="nav-number">2.3.</span> <span class="nav-text">Duration 和 Period</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间校正器-TemporalAdjuster"><span class="nav-number">3.</span> <span class="nav-text">时间校正器(TemporalAdjuster)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将日期调整到“下个周日”"><span class="nav-number">3.1.</span> <span class="nav-text">将日期调整到“下个周日”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义时间校正器"><span class="nav-number">3.2.</span> <span class="nav-text">自定义时间校正器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间格式化与时区的处理"><span class="nav-number">4.</span> <span class="nav-text">时间格式化与时区的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解析与格式化"><span class="nav-number">4.1.</span> <span class="nav-text">解析与格式化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时区的处理"><span class="nav-number">4.2.</span> <span class="nav-text">时区的处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与传统日期处理的转换"><span class="nav-number">5.</span> <span class="nav-text">与传统日期处理的转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocye</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="/css/gitalk.css">
+  <script src="/js/src/gitalk.min.js"></script>
+  <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '24d625e4ea38f7e4c002',
+		  clientSecret: 'f9d911e6d654ce10e0594e2da2bce085ec651b54',
+		  repo: 'BlogComments',
+		  owner: 'rocye',
+		  admin: ['rocye'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
