@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.rocye.cn/DesignPattern-001/</loc>
+    
+    <lastmod>2018-08-31T03:44:46.697Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.rocye.cn/JAVA8-007/</loc>
     
     <lastmod>2018-07-31T01:39:08.863Z</lastmod>

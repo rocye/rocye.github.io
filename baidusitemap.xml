@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://blog.rocye.cn/DesignPattern-001/</loc>
+    <lastmod>2018-08-31T03:44:46.697Z</lastmod>
+    <data>
+        <display>
+        <title>【设计模式笔记】01、设计模式简介</title>
+        <pubTime>2018-08-30T09:39:13.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+        <tag>软件设计原则</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式笔记" url="http://blog.rocye.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rocye.cn/JAVA8-007/</loc>
     <lastmod>2018-07-31T01:39:08.863Z</lastmod>
     <data>
@@ -251,9 +273,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Hystrix</tag>
-         
         <tag>Feign</tag>
+         
+        <tag>Hystrix</tag>
          
          
            
