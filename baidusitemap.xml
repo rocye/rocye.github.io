@@ -249,9 +249,9 @@
         
         <tag>SpringCloud</tag>
          
-        <tag>Ribbon</tag>
-         
         <tag>Hystrix</tag>
+         
+        <tag>Ribbon</tag>
          
          
            
