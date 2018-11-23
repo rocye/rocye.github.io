@@ -163,8 +163,8 @@
       </categories>
       <tags>
         <tag>SpringCloud</tag>
-        <tag>Hystrix</tag>
         <tag>Ribbon</tag>
+        <tag>Hystrix</tag>
       </tags>
   </entry>
   <entry>
